@@ -1,0 +1,11 @@
+# Politique de sécurité
+# Pour signaler une vulnérabilité de sécurité
+
+Contact: mailto:security@sodiluxe.com
+Encryption: https://sodiluxe.com/security-key.txt
+Acknowledgments: https://sodiluxe.com/security-hall-of-fame
+Preferred-Languages: fr, en
+Policy: https://sodiluxe.com/security-policy
+Hiring: https://sodiluxe.com/careers#security
+
+# Notre équipe de sécurité se réserve 5 jours ouvrés pour répondre à votre signalement.

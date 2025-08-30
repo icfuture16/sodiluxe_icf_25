@@ -1,0 +1,94 @@
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { databases, DATABASE_ID, COLLECTIONS, Query } from '@/lib/appwrite/client'
+import { Sale, SaleInput, SaleItemInput } from '@/types/appwrite.types'
+
+export function useSales(filters?: {
+  store_id?: string
+  start_date?: string
+  end_date?: string
+  user_id?: string
+}) {
+  return useQuery({
+    queryKey: ['sales', filters],
+    queryFn: async () => {
+      try {
+        console.log('Fetching sales...')
+        const queries = [Query.orderDesc('$createdAt')]
+
+        if (filters?.store_id) {
+          queries.push(Query.equal('storeId', filters.store_id))
+        }
+
+        if (filters?.start_date) {
+          queries.push(Query.greaterThanEqual('$createdAt', filters.start_date))
+        }
+
+        if (filters?.end_date) {
+          queries.push(Query.lessThanEqual('$createdAt', filters.end_date))
+        }
+
+        if (filters?.user_id) {
+          queries.push(Query.equal('userId', filters.user_id))
+        }
+
+        const response = await databases.listDocuments(
+          DATABASE_ID,
+          COLLECTIONS.SALES,
+          queries
+        )
+
+        console.log('Sales data:', response.documents)
+        return response.documents as Sale[]
+      } catch (error) {
+        console.error('Unexpected error:', error)
+        throw error
+      }
+    },
+  })
+}
+
+type CreateSaleParams = {
+  sale: SaleInput
+  items: SaleItemInput[]
+}
+
+export function useCreateSale() {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: async ({ sale, items }: CreateSaleParams) => {
+      try {
+        // Insert sale
+        const saleData = await databases.createDocument(
+          DATABASE_ID,
+          COLLECTIONS.SALES,
+          'unique()',
+          sale
+        )
+
+        // Insert sale items
+        const saleItems = items.map((item) => ({
+          ...item,
+          saleId: saleData.$id,
+        }))
+
+        for (const item of saleItems) {
+          await databases.createDocument(
+            DATABASE_ID,
+            COLLECTIONS.SALE_ITEMS,
+            'unique()',
+            item
+          )
+        }
+
+        return saleData as Sale
+      } catch (error) {
+        console.error('Unexpected error:', error)
+        throw error
+      }
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['sales'] })
+    },
+  })
+}

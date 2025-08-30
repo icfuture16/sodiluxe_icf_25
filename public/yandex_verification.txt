@@ -1,0 +1,5 @@
+Yandex verification: 1234567890abcde
+
+# Fichier de vérification pour Yandex Webmaster
+# Remplacer la valeur ci-dessus par votre propre clé de vérification Yandex
+# Ne pas supprimer ce fichier.

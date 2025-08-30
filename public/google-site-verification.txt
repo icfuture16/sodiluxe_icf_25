@@ -1,0 +1,4 @@
+google-site-verification: google1234567890abcde.html
+
+# Ce fichier est utilisé pour vérifier la propriété du site avec Google Search Console.
+# Ne pas supprimer ou modifier ce fichier.

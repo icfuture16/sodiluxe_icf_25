@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appwrite Connection Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    h2 {
+      color: #555;
+      margin-top: 30px;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .error {
+      color: #D32F2F;
+      font-weight: bold;
+    }
+    .success {
+      color: #388E3C;
+      font-weight: bold;
+    }
+    #results {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Appwrite Connection Test</h1>
+  
+  <div class="container">
+    <h2>Environment Variables</h2>
+    <div id="env-vars">Loading...</div>
+  </div>
+
+  <div class="container">
+    <h2>Test Appwrite Connection</h2>
+    <button id="test-connection">Test Connection</button>
+    <div id="results"></div>
+  </div>
+
+  <div class="container">
+    <h2>CORS Troubleshooting</h2>
+    <ol>
+      <li>Verify that your Appwrite project has the following domains added in the console:
+        <ul>
+          <li id="hostname"></li>
+          <li>http://localhost:3000</li>
+          <li>http://192.168.1.7:3000</li>
+        </ul>
+      </li>
+      <li>Check that your .env.local file has the correct values for:
+        <ul>
+          <li>NEXT_PUBLIC_APPWRITE_ENDPOINT</li>
+          <li>NEXT_PUBLIC_APPWRITE_PROJECT_ID</li>
+          <li>NEXT_PUBLIC_APPWRITE_HOSTNAME</li>
+        </ul>
+      </li>
+      <li>Verify that client.ts is correctly setting the Origin header for CORS requests</li>
+      <li>Try clearing browser cache or using private browsing</li>
+      <li>Check browser console for detailed error messages</li>
+    </ol>
+  </div>
+
+  <script>
+    // Display current environment variables
+    document.addEventListener('DOMContentLoaded', function() {
+      const envVarsDiv = document.getElementById('env-vars');
+      const hostname = document.getElementById('hostname');
+      
+      // Get environment variables from window
+      const endpoint = window.NEXT_PUBLIC_APPWRITE_ENDPOINT || 'Not defined';
+      const projectId = window.NEXT_PUBLIC_APPWRITE_PROJECT_ID || 'Not defined';
+      const appwriteHostname = window.NEXT_PUBLIC_APPWRITE_HOSTNAME || window.location.origin;
+      
+      // Display environment variables
+      envVarsDiv.innerHTML = `
+        <pre>
+  NEXT_PUBLIC_APPWRITE_ENDPOINT: ${endpoint}
+  NEXT_PUBLIC_APPWRITE_PROJECT_ID: ${projectId}
+  NEXT_PUBLIC_APPWRITE_HOSTNAME: ${appwriteHostname}
+  Current Origin: ${window.location.origin}
+        </pre>
+      `;
+      
+      // Update hostname in troubleshooting section
+      hostname.textContent = appwriteHostname || window.location.origin;
+    });
+
+    // Test connection button
+    document.getElementById('test-connection').addEventListener('click', async function() {
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '<p>Testing connection...</p>';
+      
+      try {
+        // Get environment variables
+        const endpoint = window.NEXT_PUBLIC_APPWRITE_ENDPOINT || 'https://fra.cloud.appwrite.io/v1';
+        const projectId = window.NEXT_PUBLIC_APPWRITE_PROJECT_ID || '6856f8aa00281cb47665';
+        
+        // Test health endpoint
+        const healthEndpoint = endpoint.endsWith('/v1') ? `${endpoint}/health` : `${endpoint}/health`;
+        
+        resultsDiv.innerHTML += `<p>Testing endpoint: ${healthEndpoint}</p>`;
+        
+        // Make the request
+        const response = await fetch(healthEndpoint, {
+          method: 'GET',
+          headers: {
+            'X-Appwrite-Project': projectId
+          }
+        });
+        
+        // Display results
+        if (response.ok) {
+          const data = await response.text();
+          resultsDiv.innerHTML += `
+            <p class="success">✅ Connection successful!</p>
+            <p>Status: ${response.status}</p>
+            <pre>${data.substring(0, 100)}${data.length > 100 ? '...' : ''}</pre>
+          `;
+        } else {
+          resultsDiv.innerHTML += `
+            <p class="error">❌ Connection failed with status: ${response.status}</p>
+            <p>This could indicate a CORS issue or authentication problem.</p>
+          `;
+        }
+      } catch (error) {
+        resultsDiv.innerHTML += `
+          <p class="error">❌ Connection error: ${error.message}</p>
+          <p>This is likely a CORS issue. Check the browser console for more details.</p>
+        `;
+        console.error('Appwrite connection error:', error);
+      }
+      
+      // Add browser information
+      resultsDiv.innerHTML += `
+        <h3>Browser Information</h3>
+        <pre>
+  User Agent: ${navigator.userAgent}
+  Origin: ${window.location.origin}
+  Protocol: ${window.location.protocol}
+        </pre>
+      `;
+    });
+
+    // Inject environment variables from Next.js
+    fetch('/api/env')
+      .then(response => response.json())
+      .then(data => {
+        window.NEXT_PUBLIC_APPWRITE_ENDPOINT = data.NEXT_PUBLIC_APPWRITE_ENDPOINT;
+        window.NEXT_PUBLIC_APPWRITE_PROJECT_ID = data.NEXT_PUBLIC_APPWRITE_PROJECT_ID;
+        window.NEXT_PUBLIC_APPWRITE_HOSTNAME = data.NEXT_PUBLIC_APPWRITE_HOSTNAME;
+        
+        // Update the displayed environment variables
+        const envVarsDiv = document.getElementById('env-vars');
+        envVarsDiv.innerHTML = `
+          <pre>
+  NEXT_PUBLIC_APPWRITE_ENDPOINT: ${data.NEXT_PUBLIC_APPWRITE_ENDPOINT}
+  NEXT_PUBLIC_APPWRITE_PROJECT_ID: ${data.NEXT_PUBLIC_APPWRITE_PROJECT_ID}
+  NEXT_PUBLIC_APPWRITE_HOSTNAME: ${data.NEXT_PUBLIC_APPWRITE_HOSTNAME}
+  Current Origin: ${window.location.origin}
+          </pre>
+        `;
+        
+        // Update hostname in troubleshooting section
+        const hostname = document.getElementById('hostname');
+        hostname.textContent = data.NEXT_PUBLIC_APPWRITE_HOSTNAME || window.location.origin;
+      })
+      .catch(error => {
+        console.error('Error fetching environment variables:', error);
+      });
+  </script>
+</body>
+</html>

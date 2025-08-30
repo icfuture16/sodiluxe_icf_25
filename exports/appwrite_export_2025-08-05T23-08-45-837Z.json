@@ -1,0 +1,665 @@
+{
+  "after_sales_service": [
+    {
+      "date": "2025-08-02",
+      "storeId": "686f9f190008ac09e927",
+      "storeName": "Sea Plaza Sillage",
+      "clientId": "686aa54a0c22e00861cd",
+      "clientName": "Marielle ",
+      "productId": "688abb8dc33dbb4a3ecb",
+      "productName": "@icf (CA-2507-1634)",
+      "issueDescription": "test SAV Pb",
+      "technicianId": "6889b4ce001567e942f4",
+      "technicianName": "Marielle ecqm19",
+      "estimatedCompletionDate": "2025-08-13",
+      "completionDate": "2025-08-06",
+      "notes": "",
+      "issueType": "réparation",
+      "status": "terminée",
+      "priority": "medium",
+      "isTechnicianList": false,
+      "technicians": [],
+      "$id": "688e147cd52d07cc2160",
+      "$sequence": 1,
+      "$createdAt": "2025-08-02T13:37:00.873+00:00",
+      "$updatedAt": "2025-08-03T18:07:22.884+00:00",
+      "$permissions": [
+        "read(\"user:688a0eff003d77554c33\")",
+        "update(\"user:688a0eff003d77554c33\")",
+        "delete(\"user:688a0eff003d77554c33\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "after_sales_service"
+    }
+  ],
+  "product_categories": [
+    {
+      "name": "cat001",
+      "brand": null,
+      "active": null,
+      "$id": "688a697b0026708083a1",
+      "$sequence": 1,
+      "$createdAt": "2025-07-30T18:50:38.610+00:00",
+      "$updatedAt": "2025-07-30T18:50:38.610+00:00",
+      "$permissions": [
+        "read(\"user:688a0eff003d77554c33\")",
+        "update(\"user:688a0eff003d77554c33\")",
+        "delete(\"user:688a0eff003d77554c33\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "product_categories"
+    },
+    {
+      "name": "kjkhk",
+      "brand": null,
+      "active": null,
+      "$id": "688a76f900160dcd4aa5",
+      "$sequence": 2,
+      "$createdAt": "2025-07-30T19:48:12.472+00:00",
+      "$updatedAt": "2025-07-30T19:48:12.472+00:00",
+      "$permissions": [
+        "read(\"user:688a0eff003d77554c33\")",
+        "update(\"user:688a0eff003d77554c33\")",
+        "delete(\"user:688a0eff003d77554c33\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "product_categories"
+    },
+    {
+      "name": "cat001",
+      "brand": null,
+      "active": null,
+      "$id": "688a94a20026080a08d1",
+      "$sequence": 3,
+      "$createdAt": "2025-07-30T21:54:45.964+00:00",
+      "$updatedAt": "2025-07-30T21:54:45.964+00:00",
+      "$permissions": [
+        "read(\"user:688a0eff003d77554c33\")",
+        "update(\"user:688a0eff003d77554c33\")",
+        "delete(\"user:688a0eff003d77554c33\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "product_categories"
+    },
+    {
+      "name": "hplc",
+      "brand": null,
+      "active": null,
+      "$id": "688f79fa0023ff0796c0",
+      "$sequence": 4,
+      "$createdAt": "2025-08-03T15:02:19.434+00:00",
+      "$updatedAt": "2025-08-03T15:02:19.434+00:00",
+      "$permissions": [
+        "read(\"user:688987f7003216df6426\")",
+        "update(\"user:688987f7003216df6426\")",
+        "delete(\"user:688987f7003216df6426\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "product_categories"
+    }
+  ],
+  "debit_sales": [],
+  "objectives": [
+    {
+      "utilisateurId": "686e949800373f3623fb",
+      "moisEnCours": "juillet 2025",
+      "dateCreation": "2025-07-30T02:05:24.593+00:00",
+      "financier": "{\"objectif\":3000,\"unite\":\"€\",\"actuel\":0,\"pourcentage\":0}",
+      "taches": "[{\"id\":1,\"titre\":\"Rencontrer 5 nouveaux clients\",\"complete\":false},{\"id\":2,\"titre\":\"tester l'application sodiluxe\",\"complete\":false}]",
+      "$id": "68897de5e0b882a90951",
+      "$sequence": 1,
+      "$createdAt": "2025-07-30T02:05:25.921+00:00",
+      "$updatedAt": "2025-07-30T02:05:25.921+00:00",
+      "$permissions": [
+        "read(\"user:6876c4480018d0d5698d\")",
+        "update(\"user:6876c4480018d0d5698d\")",
+        "delete(\"user:6876c4480018d0d5698d\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "objectives"
+    },
+    {
+      "utilisateurId": "688987f7003216df6426",
+      "moisEnCours": "juillet 2025",
+      "dateCreation": "2025-07-30T11:34:37.912+00:00",
+      "financier": "{\"objectif\":30000,\"unite\":\"Fcfa\",\"actuel\":0,\"pourcentage\":0}",
+      "taches": "[{\"id\":\"1\",\"titre\":\"Rencontrer 5 nouveaux clients\",\"status\":\"À faire\"},{\"id\":\"2\",\"titre\":\"Finaliser la formation produits\",\"status\":\"À faire\"}]",
+      "$id": "6889fb7957919adbb8f1",
+      "$sequence": 2,
+      "$createdAt": "2025-07-30T11:01:13.359+00:00",
+      "$updatedAt": "2025-08-03T15:31:16.922+00:00",
+      "$permissions": [
+        "read(\"user:6876c4480018d0d5698d\")",
+        "update(\"user:6876c4480018d0d5698d\")",
+        "delete(\"user:6876c4480018d0d5698d\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "objectives"
+    },
+    {
+      "utilisateurId": "688a0eff003d77554c33",
+      "moisEnCours": "juillet 2025",
+      "dateCreation": "2025-07-30T17:20:34.157+00:00",
+      "financier": "{\"objectif\":130000,\"unite\":\"Fcfa\",\"actuel\":0,\"pourcentage\":0}",
+      "taches": "[{\"id\":\"1\",\"titre\":\"test LN\",\"status\":\"Terminé\"},{\"id\":\"2\",\"titre\":\"Tache 2\",\"status\":\"Terminé\"}]",
+      "$id": "688a546560f135a0f98c",
+      "$sequence": 3,
+      "$createdAt": "2025-07-30T17:20:37.397+00:00",
+      "$updatedAt": "2025-08-01T18:11:09.515+00:00",
+      "$permissions": [
+        "read(\"user:6876c4480018d0d5698d\")",
+        "update(\"user:6876c4480018d0d5698d\")",
+        "delete(\"user:6876c4480018d0d5698d\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "objectives"
+    },
+    {
+      "utilisateurId": "688987f7003216df6426",
+      "moisEnCours": "août 2025",
+      "dateCreation": "2025-08-03T15:37:40.895+00:00",
+      "financier": "{\"objectif\":830000,\"unite\":\"Fcfa\",\"actuel\":0,\"pourcentage\":0}",
+      "taches": "[{\"id\":1,\"titre\":\"ecqm19@ecqm19\",\"status\":\"À faire\",\"complete\":false},{\"id\":1754233834643,\"titre\":\"Rencontrer 5 nouveaux clients\",\"status\":\"À faire\",\"complete\":false},{\"id\":1754233834644,\"titre\":\"manger le matin\",\"status\":\"À faire\",\"complete\":false}]",
+      "$id": "688f7bf724ccb8d21969",
+      "$sequence": 4,
+      "$createdAt": "2025-08-03T15:10:47.151+00:00",
+      "$updatedAt": "2025-08-03T15:37:42.090+00:00",
+      "$permissions": [
+        "read(\"user:6876c4480018d0d5698d\")",
+        "update(\"user:6876c4480018d0d5698d\")",
+        "delete(\"user:6876c4480018d0d5698d\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "objectives"
+    }
+  ],
+  "reservations": [],
+  "categories": [],
+  "stock_alerts": [],
+  "inventories": [],
+  "stock_movements": [],
+  "stock": [],
+  "reservation_items": [],
+  "access_codes": [
+    {
+      "code": "736f64696c757865",
+      "description": "Code d'accès pour la création de compte",
+      "$id": "6859b5c721017f45f926",
+      "$sequence": 1,
+      "$createdAt": "2025-06-23T20:15:03.139+00:00",
+      "$updatedAt": "2025-06-23T20:15:03.139+00:00",
+      "$permissions": [],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "access_codes"
+    },
+    {
+      "code": "123456",
+      "description": null,
+      "$id": "686f1380001fe7a62789",
+      "$sequence": 2,
+      "$createdAt": "2025-07-10T01:12:34.473+00:00",
+      "$updatedAt": "2025-07-10T01:12:34.473+00:00",
+      "$permissions": [],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "access_codes"
+    }
+  ],
+  "sale_items": [
+    {
+      "saleId": "688ab9cc2c5de50dcd4e",
+      "productId": "688a998332e694265186",
+      "quantity": 6,
+      "unitPrice": 7800,
+      "discountAmount": 0,
+      "$id": "688ab9cc71a937580ab1",
+      "$sequence": 1,
+      "$createdAt": "2025-07-31T00:33:16.466+00:00",
+      "$updatedAt": "2025-07-31T00:33:16.466+00:00",
+      "$permissions": [
+        "read(\"user:688a0eff003d77554c33\")",
+        "update(\"user:688a0eff003d77554c33\")",
+        "delete(\"user:688a0eff003d77554c33\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "sale_items"
+    },
+    {
+      "saleId": "688c24d173e00ef5112f",
+      "productId": "688abb8dc33dbb4a3ecb",
+      "quantity": 2,
+      "unitPrice": 75000,
+      "discountAmount": 0,
+      "$id": "688c24d23bf2dcc2620b",
+      "$sequence": 2,
+      "$createdAt": "2025-08-01T02:22:10.246+00:00",
+      "$updatedAt": "2025-08-01T02:22:10.246+00:00",
+      "$permissions": [
+        "read(\"user:688a0eff003d77554c33\")",
+        "update(\"user:688a0eff003d77554c33\")",
+        "delete(\"user:688a0eff003d77554c33\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "sale_items"
+    },
+    {
+      "saleId": "688f74cba9f5644c921e",
+      "productId": "688abb8dc33dbb4a3ecb",
+      "quantity": 3,
+      "unitPrice": 75000,
+      "discountAmount": 0,
+      "$id": "688f74cbed80abbd5d85",
+      "$sequence": 3,
+      "$createdAt": "2025-08-03T14:40:11.973+00:00",
+      "$updatedAt": "2025-08-03T14:40:11.973+00:00",
+      "$permissions": [
+        "read(\"user:688987f7003216df6426\")",
+        "update(\"user:688987f7003216df6426\")",
+        "delete(\"user:688987f7003216df6426\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "sale_items"
+    },
+    {
+      "saleId": "688f870b970b492a1655",
+      "productId": "688abb8dc33dbb4a3ecb",
+      "quantity": 4,
+      "unitPrice": 75000,
+      "discountAmount": 0,
+      "$id": "688f870bd6b28c0d7f7a",
+      "$sequence": 4,
+      "$createdAt": "2025-08-03T15:58:03.879+00:00",
+      "$updatedAt": "2025-08-03T15:58:03.879+00:00",
+      "$permissions": [
+        "read(\"user:688987f7003216df6426\")",
+        "update(\"user:688987f7003216df6426\")",
+        "delete(\"user:688987f7003216df6426\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "sale_items"
+    }
+  ],
+  "sales": [
+    {
+      "clientId": "686aa54a0c22e00861cd",
+      "storeId": "686af0b20011ff9382c8",
+      "userId": "688a0eff003d77554c33",
+      "totalAmount": 46800,
+      "discountAmount": 0,
+      "status": "completed",
+      "saleDate": "2025-07-31",
+      "customerId": null,
+      "date": null,
+      "items": [],
+      "notes": null,
+      "paymentMethod": "especes",
+      "payment_wave": "0",
+      "payment_especes": "46800",
+      "payment_cheque": "0",
+      "payment_virement": "0",
+      "payment_carte": "0",
+      "payment_cheque_cadeau": "0",
+      "payment_orange_money": "0",
+      "$id": "688ab9cc2c5de50dcd4e",
+      "$sequence": 1,
+      "$createdAt": "2025-07-31T00:33:16.182+00:00",
+      "$updatedAt": "2025-07-31T00:33:16.182+00:00",
+      "$permissions": [
+        "read(\"user:688a0eff003d77554c33\")",
+        "update(\"user:688a0eff003d77554c33\")",
+        "delete(\"user:688a0eff003d77554c33\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "sales"
+    },
+    {
+      "clientId": "68825ee08d710d84f69b",
+      "storeId": "686af0b20011ff9382c8",
+      "userId": "688a0eff003d77554c33",
+      "totalAmount": 135000,
+      "discountAmount": 15000,
+      "status": "completed",
+      "saleDate": "2025-08-01",
+      "customerId": null,
+      "date": null,
+      "items": [],
+      "notes": null,
+      "paymentMethod": "especes",
+      "payment_wave": "5000",
+      "payment_especes": "130000",
+      "payment_cheque": "0",
+      "payment_virement": "0",
+      "payment_carte": "0",
+      "payment_cheque_cadeau": "0",
+      "payment_orange_money": "0",
+      "$id": "688c24d173e00ef5112f",
+      "$sequence": 2,
+      "$createdAt": "2025-08-01T02:22:09.475+00:00",
+      "$updatedAt": "2025-08-01T02:22:09.475+00:00",
+      "$permissions": [
+        "read(\"user:688a0eff003d77554c33\")",
+        "update(\"user:688a0eff003d77554c33\")",
+        "delete(\"user:688a0eff003d77554c33\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "sales"
+    },
+    {
+      "clientId": "686aa54a0c22e00861cd",
+      "storeId": "686f9f190008ac09e927",
+      "userId": "688987f7003216df6426",
+      "totalAmount": 217000,
+      "discountAmount": 8000,
+      "status": "completed",
+      "saleDate": "2025-08-03",
+      "customerId": null,
+      "date": null,
+      "items": [],
+      "notes": null,
+      "paymentMethod": "wave",
+      "payment_wave": "200000",
+      "payment_especes": "17000",
+      "payment_cheque": "0",
+      "payment_virement": "0",
+      "payment_carte": "0",
+      "payment_cheque_cadeau": "0",
+      "payment_orange_money": "0",
+      "$id": "688f74cba9f5644c921e",
+      "$sequence": 3,
+      "$createdAt": "2025-08-03T14:40:11.696+00:00",
+      "$updatedAt": "2025-08-03T14:40:11.696+00:00",
+      "$permissions": [
+        "read(\"user:688987f7003216df6426\")",
+        "update(\"user:688987f7003216df6426\")",
+        "delete(\"user:688987f7003216df6426\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "sales"
+    },
+    {
+      "clientId": "686aa54a0c22e00861cd",
+      "storeId": "686af0b20011ff9382c8",
+      "userId": "688987f7003216df6426",
+      "totalAmount": 300000,
+      "discountAmount": 0,
+      "status": "completed",
+      "saleDate": "2025-08-03",
+      "customerId": null,
+      "date": null,
+      "items": [],
+      "notes": null,
+      "paymentMethod": "especes",
+      "payment_wave": "100000",
+      "payment_especes": "150000",
+      "payment_cheque": "0",
+      "payment_virement": "0",
+      "payment_carte": "0",
+      "payment_cheque_cadeau": "0",
+      "payment_orange_money": "50000",
+      "$id": "688f870b970b492a1655",
+      "$sequence": 4,
+      "$createdAt": "2025-08-03T15:58:03.619+00:00",
+      "$updatedAt": "2025-08-03T15:58:03.619+00:00",
+      "$permissions": [
+        "read(\"user:688987f7003216df6426\")",
+        "update(\"user:688987f7003216df6426\")",
+        "delete(\"user:688987f7003216df6426\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "sales"
+    }
+  ],
+  "products": [
+    {
+      "name": "abc_produit",
+      "description": "azerty",
+      "price": 7800,
+      "category": "kjkhk",
+      "stockQuantity": 9,
+      "reference": "KJ-2507-6968",
+      "subcategory": null,
+      "lowStockThreshold": 5,
+      "status": "active",
+      "$id": "688a998332e694265186",
+      "$sequence": 1,
+      "$createdAt": "2025-07-30T22:15:31.209+00:00",
+      "$updatedAt": "2025-07-30T22:15:31.209+00:00",
+      "$permissions": [
+        "read(\"user:688a0eff003d77554c33\")",
+        "update(\"user:688a0eff003d77554c33\")",
+        "delete(\"user:688a0eff003d77554c33\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "products"
+    },
+    {
+      "name": "@icf",
+      "description": "2025@2025",
+      "price": 75000,
+      "category": "cat001",
+      "stockQuantity": 20,
+      "reference": "CA-2507-1634",
+      "subcategory": null,
+      "lowStockThreshold": 5,
+      "status": "active",
+      "$id": "688abb8dc33dbb4a3ecb",
+      "$sequence": 2,
+      "$createdAt": "2025-07-31T00:40:45.800+00:00",
+      "$updatedAt": "2025-07-31T00:40:45.800+00:00",
+      "$permissions": [
+        "read(\"user:688a0eff003d77554c33\")",
+        "update(\"user:688a0eff003d77554c33\")",
+        "delete(\"user:688a0eff003d77554c33\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "products"
+    },
+    {
+      "name": "pro_hplc",
+      "description": "Hplc test produit",
+      "price": 85650,
+      "category": "hplc",
+      "stockQuantity": 80,
+      "reference": "HP-2508-6284",
+      "subcategory": null,
+      "lowStockThreshold": 5,
+      "status": "active",
+      "$id": "688f7a6ceedc221c68dc",
+      "$sequence": 3,
+      "$createdAt": "2025-08-03T15:04:12.979+00:00",
+      "$updatedAt": "2025-08-03T15:04:12.979+00:00",
+      "$permissions": [
+        "read(\"user:688987f7003216df6426\")",
+        "update(\"user:688987f7003216df6426\")",
+        "delete(\"user:688987f7003216df6426\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "products"
+    },
+    {
+      "name": "produit 3 aout",
+      "description": "test produit 3 aout",
+      "price": 72800,
+      "category": "hplc",
+      "stockQuantity": 70,
+      "reference": "HP-2508-8312",
+      "subcategory": null,
+      "lowStockThreshold": 15,
+      "status": "active",
+      "$id": "688f83d2549871b78344",
+      "$sequence": 4,
+      "$createdAt": "2025-08-03T15:44:18.347+00:00",
+      "$updatedAt": "2025-08-03T15:44:18.347+00:00",
+      "$permissions": [
+        "read(\"user:688987f7003216df6426\")",
+        "update(\"user:688987f7003216df6426\")",
+        "delete(\"user:688987f7003216df6426\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "products"
+    }
+  ],
+  "clients": [
+    {
+      "email": "cyrille.essoh@gmail.com",
+      "fullName": "Marielle ",
+      "phone": "07 77 17 2408",
+      "address": "Keur Ndiaye Lo",
+      "birthDate": null,
+      "gender": "femme",
+      "loyaltyPoints": 0,
+      "totalSpent": 0,
+      "segment": "bronze",
+      "vipStatus": false,
+      "preferredStore": null,
+      "lastPurchase": null,
+      "firstPurchase": null,
+      "purchaseFrequency": null,
+      "preferredCategories": [],
+      "tags": [],
+      "$id": "686aa54a0c22e00861cd",
+      "$sequence": 2,
+      "$createdAt": "2025-07-06T16:33:14.050+00:00",
+      "$updatedAt": "2025-07-06T16:50:05.198+00:00",
+      "$permissions": [
+        "read(\"user:68621b83000c6a99bf42\")",
+        "update(\"user:68621b83000c6a99bf42\")",
+        "delete(\"user:68621b83000c6a99bf42\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "clients"
+    },
+    {
+      "email": "client@gmail.com",
+      "fullName": "Mr Client",
+      "phone": "0595537446",
+      "address": "clientèle",
+      "birthDate": null,
+      "gender": "homme",
+      "loyaltyPoints": 0,
+      "totalSpent": 0,
+      "segment": "gold",
+      "vipStatus": false,
+      "preferredStore": null,
+      "lastPurchase": null,
+      "firstPurchase": null,
+      "purchaseFrequency": null,
+      "preferredCategories": [],
+      "tags": [],
+      "$id": "68825ee08d710d84f69b",
+      "$sequence": 4,
+      "$createdAt": "2025-07-24T16:27:12.580+00:00",
+      "$updatedAt": "2025-07-24T16:27:34.494+00:00",
+      "$permissions": [
+        "read(\"user:6876c4480018d0d5698d\")",
+        "update(\"user:6876c4480018d0d5698d\")",
+        "delete(\"user:6876c4480018d0d5698d\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "clients"
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@sodiluxe.com",
+      "fullName": "Admin Sodiluxe",
+      "role": "admin",
+      "storeId": "",
+      "$id": "686e949800373f3623fb",
+      "$sequence": 1,
+      "$createdAt": "2025-07-09T16:11:05.811+00:00",
+      "$updatedAt": "2025-07-09T16:11:05.811+00:00",
+      "$permissions": [],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "users"
+    },
+    {
+      "email": "hfab.secretariat@gmail.com",
+      "fullName": "Marielle ecqm19",
+      "role": "seller",
+      "storeId": "686af0b20011ff9382c8",
+      "$id": "6889b4ce001567e942f4",
+      "$sequence": 2,
+      "$createdAt": "2025-07-30T05:59:44.123+00:00",
+      "$updatedAt": "2025-07-30T05:59:44.123+00:00",
+      "$permissions": [
+        "read(\"user:6876c4480018d0d5698d\")",
+        "update(\"user:6876c4480018d0d5698d\")",
+        "delete(\"user:6876c4480018d0d5698d\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "users"
+    },
+    {
+      "email": "rordemuspu@gufum.com",
+      "fullName": "Hfablab",
+      "role": "seller",
+      "storeId": "686f9f190008ac09e927",
+      "$id": "6889eef50004bdeb5a47",
+      "$sequence": 24,
+      "$createdAt": "2025-07-30T10:07:51.023+00:00",
+      "$updatedAt": "2025-07-30T10:08:27.078+00:00",
+      "$permissions": [
+        "read(\"user:6876c4480018d0d5698d\")",
+        "update(\"user:6876c4480018d0d5698d\")",
+        "delete(\"user:6876c4480018d0d5698d\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "users"
+    },
+    {
+      "email": "test@gmail.com",
+      "fullName": "Lord Niasse",
+      "role": "seller",
+      "storeId": "686af0b20011ff9382c8",
+      "$id": "688a2c010007216d33a2",
+      "$sequence": 28,
+      "$createdAt": "2025-07-30T14:28:19.575+00:00",
+      "$updatedAt": "2025-07-30T14:28:19.575+00:00",
+      "$permissions": [
+        "read(\"user:6876c4480018d0d5698d\")",
+        "update(\"user:6876c4480018d0d5698d\")",
+        "delete(\"user:6876c4480018d0d5698d\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "users"
+    }
+  ],
+  "stores": [
+    {
+      "name": "Almadies Sillage",
+      "address": "Almadies Dakar",
+      "phone": "0595537446",
+      "brand": "sillage",
+      "isActive": true,
+      "$id": "686af0b20011ff9382c8",
+      "$sequence": 1,
+      "$createdAt": "2025-07-06T21:55:00.675+00:00",
+      "$updatedAt": "2025-07-11T15:39:28.974+00:00",
+      "$permissions": [
+        "read(\"user:68621b83000c6a99bf42\")",
+        "update(\"user:68621b83000c6a99bf42\")",
+        "delete(\"user:68621b83000c6a99bf42\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "stores"
+    },
+    {
+      "name": "Sea Plaza Sillage",
+      "address": "Sea plaza",
+      "phone": "+221774593255",
+      "brand": "sillage",
+      "isActive": true,
+      "$id": "686f9f190008ac09e927",
+      "$sequence": 6,
+      "$createdAt": "2025-07-10T11:08:09.461+00:00",
+      "$updatedAt": "2025-07-10T11:08:09.461+00:00",
+      "$permissions": [
+        "read(\"user:686e940e0015da833769\")",
+        "update(\"user:686e940e0015da833769\")",
+        "delete(\"user:686e940e0015da833769\")"
+      ],
+      "$databaseId": "68599714002eef233c16",
+      "$collectionId": "stores"
+    }
+  ]
+}

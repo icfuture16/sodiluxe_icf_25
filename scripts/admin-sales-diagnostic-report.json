@@ -1,0 +1,60 @@
+{
+  "timestamp": "2025-08-14T14:59:52.369Z",
+  "summary": {
+    "totalProblematicSales": 3,
+    "salesWithAdminUserId": 2,
+    "salesWithAdminSellerId": 0,
+    "salesWithAdminUserSeller": 3
+  },
+  "problematicSales": [
+    {
+      "id": "689d69c51ae6d50b69d9",
+      "issue": "userId = ADMIN",
+      "createdAt": "2025-08-14T04:44:53.110+00:00",
+      "userId": "ADMIN",
+      "user_seller": "ADMIN"
+    },
+    {
+      "id": "689d69c5e1ebc432b79f",
+      "issue": "userId = ADMIN",
+      "createdAt": "2025-08-14T04:44:53.926+00:00",
+      "userId": "ADMIN",
+      "user_seller": "ADMIN"
+    },
+    {
+      "id": "689df79bae1dba9eb7f1",
+      "issue": "user_seller = ADMIN",
+      "createdAt": "2025-08-14T14:50:03.713+00:00",
+      "userId": "6897a51f000609b185da",
+      "user_seller": "ADMIN"
+    }
+  ],
+  "availableUsers": [
+    {
+      "id": "6897a51f000609b185da",
+      "email": "admin@sodiluxe.com"
+    },
+    {
+      "id": "6897ab6c001a1415104b",
+      "email": "ln_email@gmail.com"
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "Identifier l'utilisateur correct",
+      "description": "Examiner chaque vente pour déterminer qui était le vrai vendeur"
+    },
+    {
+      "action": "Mettre à jour les IDs",
+      "description": "Remplacer \"ADMIN\" par l'ID utilisateur correct dans sellerId/userId"
+    },
+    {
+      "action": "Corriger user_seller",
+      "description": "Mettre à jour user_seller avec le nom complet du vendeur"
+    },
+    {
+      "action": "Ajouter une validation",
+      "description": "Implémenter une validation pour empêcher l'utilisation d'\"ADMIN\" comme ID utilisateur"
+    }
+  ]
+}

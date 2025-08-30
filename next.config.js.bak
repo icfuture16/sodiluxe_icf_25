@@ -1,0 +1,40 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ['fra.cloud.appwrite.io'],
+  },
+  // Configuration pour les requêtes API
+  async headers() {
+    return [
+      {
+        // Appliquer ces en-têtes à toutes les routes
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Credentials',
+            value: 'true',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*', // En production, remplacer par les domaines spécifiques
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET,DELETE,PATCH,POST,PUT',
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
+          },
+        ],
+      },
+    ];
+  },
+  // Optimisation webpack
+  webpack: (config) => {
+    return config;
+  },
+};
+
+module.exports = nextConfig;

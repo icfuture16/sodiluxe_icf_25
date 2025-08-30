@@ -1,0 +1,5 @@
+# Fichier ads.txt pour la monétisation publicitaire
+# Pour plus d'informations: https://iabtechlab.com/ads-txt/
+# Contact: contact@sodiluxe.com
+
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

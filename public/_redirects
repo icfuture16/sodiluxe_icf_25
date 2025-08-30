@@ -1,0 +1,27 @@
+# Redirection pour le routage SPA (Single Page Application)
+/*    /index.html   200
+
+# Redirections personnalisées
+/ventes /sales 301
+/ventes/* /sales/:splat 301
+/historique /sales/history 301
+/historique/* /sales/history/:splat 301
+
+# Redirections pour les anciennes URL (au besoin)
+/old-path /nouveau-chemin 301
+/autre-ancien-chemin /* 301
+
+# Gestion des erreurs 404
+/404.html 404
+/* /404.html 404
+
+# Cache des ressources statiques (1 an)
+/_next/static/*  /_next/static/:splat  200
+/static/*        /static/:splat        200
+
+# Désactiver le cache pour les pages HTML (sauf si nécessaire)
+/*.html  /:splat  200
+
+# Redirection HTTPS (généralement gérée par Netlify)
+# http://*  https://:splat  301
+# https://www.sodiluxe-icf.netlify.app/*  https://sodiluxe-icf.netlify.app/:splat  301

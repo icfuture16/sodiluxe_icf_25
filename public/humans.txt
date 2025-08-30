@@ -1,0 +1,15 @@
+/* TEAM */
+# Développeurs
+  Nom: Équipe Sodiluxe
+  Site: https://sodiluxe.com
+  Contact: contact@sodiluxe.com
+  Twitter: @sodiluxe
+
+/* THANKS */
+  Merci à tous nos utilisateurs pour leur confiance et leurs retours précieux.
+
+/* SITE */
+  Dernière mise à jour: 2025/08/06
+  Standards: HTML5, CSS3, JavaScript (ES6+)
+  Composants: React, Next.js, Tailwind CSS
+  Logiciels: Visual Studio Code, Git, Figma

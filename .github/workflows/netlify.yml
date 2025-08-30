@@ -1,0 +1,52 @@
+name: Build and Deploy to Netlify
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.18.0'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Build project
+        run: npm run build
+        env:
+          # Utilisez des valeurs factices pour la CI, les vraies valeurs seront utilisées sur Netlify
+          NEXT_PUBLIC_APPWRITE_ENDPOINT: ${{ secrets.NEXT_PUBLIC_APPWRITE_ENDPOINT || 'https://cloud.appwrite.io/v1' }}
+          NEXT_PUBLIC_APPWRITE_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_APPWRITE_PROJECT_ID || 'dummy-project-id' }}
+          NEXT_PUBLIC_APPWRITE_HOSTNAME: ${{ secrets.NEXT_PUBLIC_APPWRITE_HOSTNAME || 'cloud.appwrite.io' }}
+          APPWRITE_API_KEY: ${{ secrets.APPWRITE_API_KEY || 'dummy-api-key' }}
+          APPWRITE_DATABASE_ID: ${{ secrets.APPWRITE_DATABASE_ID || 'dummy-database-id' }}
+
+      - name: Deploy to Netlify (preview)
+        if: github.event_name == 'pull_request'
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=out --message "Deploy preview from GitHub Actions"
+
+      - name: Deploy to Netlify (production)
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=out --prod --message "Deploy production from GitHub Actions"

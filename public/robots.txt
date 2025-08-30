@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /_next
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Host
+Host: https://sodiluxecrm.com
+
+# Sitemaps
+Sitemap: https://sodiluxecrm.com/sitemap.xml

@@ -1,0 +1,124 @@
+# Configuration pour Next.js sur Netlify
+[build]
+  command = "npm run build"
+  publish = ".next"
+  functions = ".netlify/functions"
+
+[build.environment]
+  # NETLIFY_NEXT_PLUGIN_SKIP = "true"  # Commenté pour permettre au plugin Next.js de fonctionner
+  NETLIFY_USE_YARN = "true"
+  NODE_VERSION = "18.20.8"
+  NPM_FLAGS = "--legacy-peer-deps"
+  NEXT_TELEMETRY_DISABLED = "1"
+  ENABLE_SOURCEMAPS = "false"
+
+[dev]
+  command = "npm run dev"
+  port = 3000
+  publish = ".next"
+  targetPort = 3000
+
+# Plugins Netlify
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Configuration robots.txt désactivée temporairement en raison de problèmes d'installation
+# [[plugins]]
+#   package = "@netlify/plugin-sitemap"
+#   [plugins.inputs]
+#     output = "/sitemap.xml"
+
+# [[plugins]]
+#   package = "@netlify/plugin-robots-txt"
+#   [plugins.inputs]
+#     host = "https://sodiluxecrm.com"
+#     sitemap = "https://sodiluxecrm.com/sitemap.xml"
+#     policy = [
+#       { userAgent = "*", allow = "/" },
+#       { userAgent = "*", disallow = ["/admin", "/api"] }
+#     ]
+
+# Redirections pour Next.js SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
+
+# Redirections personnalisées
+[[redirects]]
+  from = "/ventes/*"
+  to = "/sales/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/historique/*"
+  to = "/sales/history/:splat"
+  status = 301
+
+# En-têtes de sécurité globaux
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Sécurité
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    
+    # CSP avec support pour Google Analytics et Appwrite
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      img-src 'self' data: fra.cloud.appwrite.io https://www.google-analytics.com https://www.googletagmanager.com;
+      font-src 'self' https://fonts.gstatic.com;
+      connect-src 'self' fra.cloud.appwrite.io https://www.google-analytics.com https://region1.google-analytics.com;
+      frame-ancestors 'none';
+      form-action 'self';
+      base-uri 'self';
+      object-src 'none';
+    """
+
+# Cache pour les ressources statiques (1 an)
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Désactiver le cache pour les pages HTML
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Configuration de la fonctionnalité de prévisualisation
+[context.deploy-preview]
+  command = "npm run build"
+  publish = ".next"
+  [context.deploy-preview.environment]
+    NEXT_PUBLIC_APP_ENV = "staging"
+
+[context.branch-deploy]
+  command = "npm run build"
+  publish = ".next"
+  [context.branch-deploy.environment]
+    NEXT_PUBLIC_APP_ENV = "staging"
+
+[context.production]
+  command = "npm run build"
+  publish = ".next"
+  [context.production.environment]
+    NODE_ENV = "production"
+    NEXT_PUBLIC_APP_ENV = "production"
+
+# Configuration des fonctions serverless (si utilisées)
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["@prisma/client"]

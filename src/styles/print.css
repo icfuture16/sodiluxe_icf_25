@@ -1,0 +1,189 @@
+/* Styles d'impression pour les factures et pages d'analyses */
+@media print {
+  /* Cacher les éléments non nécessaires pour l'impression */
+  button:not(.print-keep), 
+  nav, 
+  header, 
+  footer,
+  .no-print,
+  /* Masquer le menu de navigation */
+  aside,
+  .sidebar,
+  .navigation,
+  /* Masquer les éléments d'interface non essentiels */
+  .search-bar,
+  .filter-controls,
+  .pagination,
+  .action-buttons,
+  /* Masquer les boutons d'action spécifiques */
+  [data-testid="report-downloader"],
+  .report-downloader {
+    display: none !important;
+  }
+  
+  /* Garder visible le contenu principal */
+  .print-keep {
+    display: block !important;
+  }
+  
+  /* Style général de la page */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Contenu de la facture */
+  .print-container {
+    width: 100%;
+    padding: 20px;
+    box-shadow: none !important;
+  }
+  
+  /* En-tête de la facture */
+  .print-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f3f4f6;
+  }
+  
+  /* Logo de l'entreprise */
+  .print-logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+  }
+  
+  /* Informations de la facture */
+  .print-info {
+    margin-bottom: 20px;
+  }
+  
+  /* Tableau des articles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #f2f2f2 !important;
+  }
+  
+  /* Résumé financier */
+  .print-summary {
+    margin-top: 20px;
+    text-align: right;
+  }
+  
+  /* Pied de page */
+  .print-footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 10px;
+  }
+  
+  /* Afficher les éléments cachés en mode normal mais visibles en impression */
+  .hidden.print\:block {
+    display: block !important;
+  }
+  
+  /* Assurer que les couleurs de fond s'impriment */
+  .bg-gray-50, .bg-gray-100, .bg-white {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  /* Styles spécifiques pour les pages d'historique et d'analyses */
+  .sales-history-container,
+  .analytics-container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 10px !important;
+  }
+  
+  /* Optimiser les tableaux pour l'impression */
+  .sales-table,
+  .analytics-table {
+    width: 100% !important;
+    font-size: 11px !important;
+    border-collapse: collapse !important;
+  }
+  
+  .sales-table th,
+  .sales-table td,
+  .analytics-table th,
+  .analytics-table td {
+    padding: 4px 6px !important;
+    border: 1px solid #ddd !important;
+    word-wrap: break-word !important;
+  }
+  
+  /* Optimiser les statistiques pour l'impression */
+  .stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    gap: 10px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .stat-card {
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+    background: white !important;
+    text-align: center !important;
+  }
+  
+  /* Titre de la page */
+  .page-title {
+    font-size: 18px !important;
+    font-weight: bold !important;
+    margin-bottom: 15px !important;
+    text-align: center !important;
+    border-bottom: 2px solid #333 !important;
+    padding-bottom: 10px !important;
+  }
+  
+  /* Informations de filtrage appliqué */
+  .applied-filters {
+    background: #f9f9f9 !important;
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+    margin-bottom: 15px !important;
+    font-size: 10px !important;
+  }
+  
+  /* Masquer les éléments de scroll */
+  .overflow-x-auto,
+  .overflow-y-auto {
+    overflow: visible !important;
+  }
+  
+  /* Ajuster les marges pour l'impression */
+  @page {
+    margin: 0.5cm;
+    size: A4 landscape;
+  }
+  
+  /* Mode portrait pour les analyses */
+  .analytics-page {
+    @page {
+      size: A4 portrait;
+    }
+  }
+}

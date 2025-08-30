@@ -1,0 +1,14 @@
+{
+  "name": "sodiluxe-appwrite-scripts",
+  "version": "1.0.0",
+  "description": "Scripts utilitaires pour la gestion des collections Appwrite du CRM Sodiluxe",
+  "main": "create-appwrite-collections.js",
+  "scripts": {
+    "create-collections": "node create-appwrite-collections.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-appwrite": "^17.0.0"
+  },
+  "private": true
+}
