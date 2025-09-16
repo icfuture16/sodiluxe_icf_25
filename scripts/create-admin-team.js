@@ -125,3 +125,4 @@ console.log('🆔 Project ID:', config.PROJECT_ID);
 console.log('🔑 API Key:', process.env.APPWRITE_API_KEY ? '***' : 'Non définie');
 
 createAdminTeam();
+

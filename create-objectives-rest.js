@@ -6,7 +6,7 @@ const path = require('path');
 const APPWRITE_ENDPOINT = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT;
 const APPWRITE_PROJECT_ID = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID;
 const APPWRITE_API_KEY = process.env.APPWRITE_API_KEY;
-const DATABASE_ID = process.env.APPWRITE_DATABASE_ID || '68599714002eef233c16';
+const DATABASE_ID = process.env.APPWRITE_DATABASE_ID || '68bf1e7b003c6b340d6e';
 const COLLECTION_ID = 'objectives';
 
 // Journal
@@ -202,3 +202,4 @@ createCollection()
     console.error('Erreur détaillée:', error);
     process.exit(1);
   });
+

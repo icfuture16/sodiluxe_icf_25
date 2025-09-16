@@ -28,3 +28,4 @@ export { useCalculateLoyaltyPoints } from './useLoyaltyHistory'
 export { useClients } from './useClients'
 export { useStores } from './useStores'
 export { useProducts } from './useProducts'
+

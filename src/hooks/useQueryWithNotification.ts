@@ -82,3 +82,4 @@ export function useMutationWithNotification<TData, TError, TVariables>(
 
   return result
 }
+

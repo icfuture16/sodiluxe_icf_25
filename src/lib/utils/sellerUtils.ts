@@ -124,3 +124,4 @@ export function isValidUserSeller(userSeller: string): boolean {
  * generateUserSeller('') → 'UNKNOWN'
  * generateUserSeller('X') → 'X'
  */
+

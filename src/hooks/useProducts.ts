@@ -113,3 +113,4 @@ export function useUpdateProduct() {
 }
 
 // La fonction useDeleteProduct a été supprimée pour éviter les erreurs TypeScript
+

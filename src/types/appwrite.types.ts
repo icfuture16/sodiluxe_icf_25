@@ -334,3 +334,4 @@ export interface DebitSaleItemInput {
   unitPrice: number
   discountAmount: number
 }
+

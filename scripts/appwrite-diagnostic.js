@@ -233,3 +233,4 @@ runDiagnostic().catch(error => {
   log(`Erreur inattendue lors du diagnostic: ${error.message}`, 'error');
   console.error(error);
 });
+

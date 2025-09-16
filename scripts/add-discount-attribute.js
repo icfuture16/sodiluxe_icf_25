@@ -50,3 +50,4 @@ addDiscountAttribute()
     console.error('Erreur dans le script:', error);
     process.exit(1);
   });
+

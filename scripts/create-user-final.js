@@ -146,3 +146,4 @@ async function createUserFinal(authUserId) {
 // Utiliser l'ID de l'utilisateur manquant
 const missingUserId = '688987f7003216df6426';
 createUserFinal(missingUserId);
+

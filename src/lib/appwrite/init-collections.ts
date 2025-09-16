@@ -103,3 +103,4 @@ export const createDebitSalesCollections = async (): Promise<void> => {
 
 // Export par défaut
 export default createDebitSalesCollections;
+

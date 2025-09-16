@@ -62,3 +62,4 @@ async function addDepositAttributes() {
 
 // Exécuter le script
 addDepositAttributes();
+

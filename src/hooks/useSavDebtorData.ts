@@ -43,3 +43,4 @@ export function useSavDebtorData(filters: SavDebtorFilters) {
     refetchInterval: 15 * 60 * 1000, // 15 minutes
   })
 }
+

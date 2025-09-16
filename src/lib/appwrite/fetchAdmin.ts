@@ -37,3 +37,4 @@ export async function fetchAppwriteAdmin({
   }
   return res.json();
 }
+

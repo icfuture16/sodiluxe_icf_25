@@ -82,3 +82,4 @@ addUserSellerAttribute()
 module.exports = {
   addUserSellerAttribute
 };
+

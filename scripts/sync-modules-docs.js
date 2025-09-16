@@ -87,3 +87,4 @@ syncFolders(documentationModulesPath, docsModulesPath);
 
 console.log('\n✅ Synchronisation terminée!');
 console.log('\nNote: Pour maintenir la cohérence de la documentation, exécutez ce script après chaque modification des fichiers de documentation des modules.');
+

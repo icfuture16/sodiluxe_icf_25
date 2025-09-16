@@ -3,7 +3,7 @@
 
 // Définir manuellement les variables d'environnement qui seraient normalement disponibles dans Next.js
 process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT = 'https://fra.cloud.appwrite.io/v1';
-process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID = '6856f8aa00281cb47665';
+process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID = '68bf1c29001d20f7444d';
 
 // Importer les dépendances
 const { Client, Databases, ID, Query } = require('appwrite');
@@ -17,7 +17,7 @@ const client = new Client()
 const databases = new Databases(client);
 
 // Définir les constantes
-const DATABASE_ID = '68599714002eef233c16';
+const DATABASE_ID = '68bf1e7b003c6b340d6e';
 const ACCESS_CODES_COLLECTION = 'access_codes';
 
 async function checkAccessCodesAsGuest() {
@@ -93,3 +93,4 @@ async function runTests() {
 }
 
 runTests();
+

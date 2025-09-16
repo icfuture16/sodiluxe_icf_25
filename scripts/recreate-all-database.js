@@ -1,11 +1,19 @@
+/**
+ * Script pour recréer complètement la base de données Appwrite
+ * Ce script supprime et recrée la base de données et toutes les collections
+ */
+
+require('dotenv').config({ path: require('path').resolve(__dirname, '../.env.production') });
 const { Client, Databases, ID, Permission, Role } = require('node-appwrite');
-require('dotenv').config({ path: require('path').resolve(__dirname, './.env') });
 const { DATABASE_ID, COLLECTIONS } = require('./appwrite-config');
 
 // Vérification des variables d'environnement requises
-if (!process.env.APPWRITE_ENDPOINT || !process.env.APPWRITE_PROJECT_ID || !process.env.APPWRITE_API_KEY) {
-  console.error('Erreur: Variables d\'environnement manquantes.');
-  console.error('Veuillez définir APPWRITE_ENDPOINT, APPWRITE_PROJECT_ID et APPWRITE_API_KEY dans le fichier .env');
+if (!process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || !process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || !process.env.APPWRITE_API_KEY) {
+  console.error('❌ Erreur: Variables d\'environnement manquantes.');
+  console.error('Veuillez vérifier que les variables suivantes sont définies dans .env.production:');
+  console.error('- NEXT_PUBLIC_APPWRITE_ENDPOINT');
+  console.error('- NEXT_PUBLIC_APPWRITE_PROJECT_ID');
+  console.error('- APPWRITE_API_KEY');
   process.exit(1);
 }
 
@@ -13,34 +21,49 @@ if (!process.env.APPWRITE_ENDPOINT || !process.env.APPWRITE_PROJECT_ID || !proce
 const client = new Client();
 
 client
-  .setEndpoint(process.env.APPWRITE_ENDPOINT)
-  .setProject(process.env.APPWRITE_PROJECT_ID)
-  .setKey(process.env.APPWRITE_API_KEY); // Clé API avec permissions suffisantes
+  .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT)
+  .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID)
+  .setKey(process.env.APPWRITE_API_KEY);
 
 const databases = new Databases(client);
 
-// ID de la base de données et collections importés depuis appwrite-config.js
+console.log('🚀 Début de la recréation complète de la base de données Appwrite');
+console.log(`📊 Project ID: ${process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID}`);
+console.log(`🗄️  Database ID: ${DATABASE_ID}`);
+console.log(`🌐 Endpoint: ${process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT}`);
 
 // Fonction principale
-async function createCollections() {
+async function recreateDatabase() {
   try {
-    console.log('Création des collections Appwrite...');
-    console.log(`Utilisation de la base de données: ${DATABASE_ID}`);
+    console.log('\n🔍 Étape 1: Vérification et suppression de la base de données existante...');
     
-    // Vérifier si la base de données existe, sinon la créer
+    // Supprimer la base de données existante si elle existe
     try {
       await databases.get(DATABASE_ID);
-      console.log(`Base de données '${DATABASE_ID}' existe déjà.`);
+      console.log(`🗑️  Suppression de la base de données existante '${DATABASE_ID}'...`);
+      await databases.delete(DATABASE_ID);
+      console.log('✅ Base de données supprimée avec succès');
     } catch (error) {
       if (error.code === 404) {
-        await databases.create(DATABASE_ID, 'crm-sodiluxe', 'Base de données CRM Sodiluxe');
-        console.log(`Base de données '${DATABASE_ID}' créée avec succès.`);
+        console.log('ℹ️  Aucune base de données existante à supprimer');
       } else {
+        console.error('❌ Erreur lors de la suppression:', error.message);
         throw error;
       }
     }
 
-    // Création des collections
+    console.log('\n🏗️  Étape 2: Création de la nouvelle base de données...');
+    
+    // Créer la nouvelle base de données
+    const database = await databases.create(DATABASE_ID, 'CRM Sodiluxe ICF', 'Base de données CRM pour Sodiluxe ICF - Recréée automatiquement', true);
+    
+    console.log(`✅ Base de données '${DATABASE_ID}' créée avec succès:`);
+    console.log(`   - Nom: ${database.name}`);
+    console.log(`   - Description: ${database.description}`);
+
+    console.log('\n📋 Étape 3: Création des collections...');
+    
+    // Créer toutes les collections
     await createStoresCollection();
     await createUsersCollection();
     await createClientsCollection();
@@ -52,25 +75,24 @@ async function createCollections() {
     await createAccessCodesCollection();
     await createLoyaltyHistoryCollection();
 
-    console.log('Toutes les collections ont été créées avec succès!');
+    console.log('\n🎉 Recréation complète terminée avec succès!');
+    console.log('\n📋 Étapes suivantes recommandées:');
+    console.log('1. Vérifiez la base de données dans la console Appwrite');
+    console.log('2. Importez les données de base si nécessaire');
+    console.log('3. Testez l\'application avec la nouvelle base de données');
+    
   } catch (error) {
-    console.error('Erreur lors de la création des collections:', error);
+    console.error('\n❌ Erreur lors de la recréation:', error);
+    console.error('Détails:', error.message);
+    process.exit(1);
   }
 }
 
 // Fonction pour créer la collection Stores
 async function createStoresCollection() {
   try {
-    // Vérifier si la collection existe déjà
-    try {
-      await databases.getCollection(DATABASE_ID, COLLECTIONS.STORES);
-      console.log(`Collection '${COLLECTIONS.STORES}' existe déjà.`);
-      return;
-    } catch (error) {
-      if (error.code !== 404) throw error;
-    }
-
-    // Créer la collection
+    console.log('📦 Création de la collection Stores...');
+    
     const collection = await databases.createCollection(
       DATABASE_ID,
       COLLECTIONS.STORES,
@@ -93,9 +115,9 @@ async function createStoresCollection() {
     // Créer les index
     await databases.createIndex(DATABASE_ID, COLLECTIONS.STORES, 'name_index', 'key', ['name']);
 
-    console.log(`Collection '${COLLECTIONS.STORES}' créée avec succès.`);
+    console.log('✅ Collection Stores créée');
   } catch (error) {
-    console.error(`Erreur lors de la création de la collection '${COLLECTIONS.STORES}':`, error);
+    console.error(`❌ Erreur lors de la création de la collection Stores:`, error.message);
     throw error;
   }
 }
@@ -103,16 +125,8 @@ async function createStoresCollection() {
 // Fonction pour créer la collection Users
 async function createUsersCollection() {
   try {
-    // Vérifier si la collection existe déjà
-    try {
-      await databases.getCollection(DATABASE_ID, COLLECTIONS.USERS);
-      console.log(`Collection '${COLLECTIONS.USERS}' existe déjà.`);
-      return;
-    } catch (error) {
-      if (error.code !== 404) throw error;
-    }
-
-    // Créer la collection
+    console.log('👥 Création de la collection Users...');
+    
     const collection = await databases.createCollection(
       DATABASE_ID,
       COLLECTIONS.USERS,
@@ -135,9 +149,9 @@ async function createUsersCollection() {
     await databases.createIndex(DATABASE_ID, COLLECTIONS.USERS, 'email_index', 'unique', ['email']);
     await databases.createIndex(DATABASE_ID, COLLECTIONS.USERS, 'store_index', 'key', ['storeId']);
 
-    console.log(`Collection '${COLLECTIONS.USERS}' créée avec succès.`);
+    console.log('✅ Collection Users créée');
   } catch (error) {
-    console.error(`Erreur lors de la création de la collection '${COLLECTIONS.USERS}':`, error);
+    console.error(`❌ Erreur lors de la création de la collection Users:`, error.message);
     throw error;
   }
 }
@@ -145,16 +159,8 @@ async function createUsersCollection() {
 // Fonction pour créer la collection Clients
 async function createClientsCollection() {
   try {
-    // Vérifier si la collection existe déjà
-    try {
-      await databases.getCollection(DATABASE_ID, COLLECTIONS.CLIENTS);
-      console.log(`Collection '${COLLECTIONS.CLIENTS}' existe déjà.`);
-      return;
-    } catch (error) {
-      if (error.code !== 404) throw error;
-    }
-
-    // Créer la collection
+    console.log('👤 Création de la collection Clients...');
+    
     const collection = await databases.createCollection(
       DATABASE_ID,
       COLLECTIONS.CLIENTS,
@@ -183,9 +189,9 @@ async function createClientsCollection() {
     await databases.createIndex(DATABASE_ID, COLLECTIONS.CLIENTS, 'fullName_index', 'fulltext', ['fullName']);
     await databases.createIndex(DATABASE_ID, COLLECTIONS.CLIENTS, 'phone_index', 'key', ['phone']);
 
-    console.log(`Collection '${COLLECTIONS.CLIENTS}' créée avec succès.`);
+    console.log('✅ Collection Clients créée');
   } catch (error) {
-    console.error(`Erreur lors de la création de la collection '${COLLECTIONS.CLIENTS}':`, error);
+    console.error(`❌ Erreur lors de la création de la collection Clients:`, error.message);
     throw error;
   }
 }
@@ -193,16 +199,8 @@ async function createClientsCollection() {
 // Fonction pour créer la collection Products
 async function createProductsCollection() {
   try {
-    // Vérifier si la collection existe déjà
-    try {
-      await databases.getCollection(DATABASE_ID, COLLECTIONS.PRODUCTS);
-      console.log(`Collection '${COLLECTIONS.PRODUCTS}' existe déjà.`);
-      return;
-    } catch (error) {
-      if (error.code !== 404) throw error;
-    }
-
-    // Créer la collection
+    console.log('🛍️  Création de la collection Products...');
+    
     const collection = await databases.createCollection(
       DATABASE_ID,
       COLLECTIONS.PRODUCTS,
@@ -228,9 +226,9 @@ async function createProductsCollection() {
     await databases.createIndex(DATABASE_ID, COLLECTIONS.PRODUCTS, 'category_index', 'key', ['category']);
     await databases.createIndex(DATABASE_ID, COLLECTIONS.PRODUCTS, 'brand_index', 'key', ['brand']);
 
-    console.log(`Collection '${COLLECTIONS.PRODUCTS}' créée avec succès.`);
+    console.log('✅ Collection Products créée');
   } catch (error) {
-    console.error(`Erreur lors de la création de la collection '${COLLECTIONS.PRODUCTS}':`, error);
+    console.error(`❌ Erreur lors de la création de la collection Products:`, error.message);
     throw error;
   }
 }
@@ -238,16 +236,8 @@ async function createProductsCollection() {
 // Fonction pour créer la collection Sales
 async function createSalesCollection() {
   try {
-    // Vérifier si la collection existe déjà
-    try {
-      await databases.getCollection(DATABASE_ID, COLLECTIONS.SALES);
-      console.log(`Collection '${COLLECTIONS.SALES}' existe déjà.`);
-      return;
-    } catch (error) {
-      if (error.code !== 404) throw error;
-    }
-
-    // Créer la collection
+    console.log('💰 Création de la collection Sales...');
+    
     const collection = await databases.createCollection(
       DATABASE_ID,
       COLLECTIONS.SALES,
@@ -275,9 +265,9 @@ async function createSalesCollection() {
     await databases.createIndex(DATABASE_ID, COLLECTIONS.SALES, 'user_index', 'key', ['userId']);
     await databases.createIndex(DATABASE_ID, COLLECTIONS.SALES, 'date_index', 'key', ['$createdAt']);
 
-    console.log(`Collection '${COLLECTIONS.SALES}' créée avec succès.`);
+    console.log('✅ Collection Sales créée');
   } catch (error) {
-    console.error(`Erreur lors de la création de la collection '${COLLECTIONS.SALES}':`, error);
+    console.error(`❌ Erreur lors de la création de la collection Sales:`, error.message);
     throw error;
   }
 }
@@ -285,16 +275,8 @@ async function createSalesCollection() {
 // Fonction pour créer la collection SaleItems
 async function createSaleItemsCollection() {
   try {
-    // Vérifier si la collection existe déjà
-    try {
-      await databases.getCollection(DATABASE_ID, COLLECTIONS.SALE_ITEMS);
-      console.log(`Collection '${COLLECTIONS.SALE_ITEMS}' existe déjà.`);
-      return;
-    } catch (error) {
-      if (error.code !== 404) throw error;
-    }
-
-    // Créer la collection
+    console.log('📋 Création de la collection SaleItems...');
+    
     const collection = await databases.createCollection(
       DATABASE_ID,
       COLLECTIONS.SALE_ITEMS,
@@ -318,64 +300,9 @@ async function createSaleItemsCollection() {
     await databases.createIndex(DATABASE_ID, COLLECTIONS.SALE_ITEMS, 'sale_index', 'key', ['saleId']);
     await databases.createIndex(DATABASE_ID, COLLECTIONS.SALE_ITEMS, 'product_index', 'key', ['productId']);
 
-    console.log(`Collection '${COLLECTIONS.SALE_ITEMS}' créée avec succès.`);
+    console.log('✅ Collection SaleItems créée');
   } catch (error) {
-    console.error(`Erreur lors de la création de la collection '${COLLECTIONS.SALE_ITEMS}':`, error);
-    throw error;
-  }
-}
-
-// Fonction pour créer la collection Access Codes
-async function createAccessCodesCollection() {
-  try {
-    // Vérifier si la collection existe déjà
-    try {
-      await databases.getCollection(DATABASE_ID, COLLECTIONS.ACCESS_CODES);
-      console.log(`Collection '${COLLECTIONS.ACCESS_CODES}' existe déjà.`);
-      return;
-    } catch (error) {
-      if (error.code !== 404) throw error;
-    }
-
-    // Créer la collection
-    const collection = await databases.createCollection(
-      DATABASE_ID,
-      COLLECTIONS.ACCESS_CODES,
-      'Codes d\'accès',
-      [
-        Permission.read(Role.any()),
-        Permission.create(Role.users()),
-        Permission.update(Role.users()),
-        Permission.delete(Role.users())
-      ]
-    );
-
-    // Ajouter les attributs
-    await databases.createStringAttribute(DATABASE_ID, COLLECTIONS.ACCESS_CODES, 'code', 255, true);
-    await databases.createStringAttribute(DATABASE_ID, COLLECTIONS.ACCESS_CODES, 'description', 255, false);
-
-    // Créer les index
-    await databases.createIndex(DATABASE_ID, COLLECTIONS.ACCESS_CODES, 'code_index', 'unique', ['code']);
-
-    console.log(`Collection '${COLLECTIONS.ACCESS_CODES}' créée avec succès.`);
-    
-    // Ajouter le code d'accès initial
-    // Convertir "sodiluxe" en code hexadécimal
-    const accessCode = Buffer.from('sodiluxe').toString('hex');
-    
-    await databases.createDocument(
-      DATABASE_ID,
-      COLLECTIONS.ACCESS_CODES,
-      ID.unique(),
-      {
-        code: accessCode,
-        description: 'Code d\'accès pour la création de compte'
-      }
-    );
-    
-    console.log(`Code d'accès initial créé: ${accessCode}`);
-  } catch (error) {
-    console.error(`Erreur lors de la création de la collection '${COLLECTIONS.ACCESS_CODES}':`, error);
+    console.error(`❌ Erreur lors de la création de la collection SaleItems:`, error.message);
     throw error;
   }
 }
@@ -383,17 +310,8 @@ async function createAccessCodesCollection() {
 // Fonction pour créer la collection Reservations
 async function createReservationsCollection() {
   try {
-    // Vérifier si la collection existe déjà et la supprimer
-    try {
-      const existingCollection = await databases.getCollection(DATABASE_ID, COLLECTIONS.RESERVATIONS);
-      console.log(`Collection '${COLLECTIONS.RESERVATIONS}' existe déjà. Suppression pour recréation...`);
-      await databases.deleteCollection(DATABASE_ID, COLLECTIONS.RESERVATIONS);
-      console.log(`Collection '${COLLECTIONS.RESERVATIONS}' supprimée avec succès.`);
-    } catch (error) {
-      if (error.code !== 404) console.warn(`Erreur lors de la vérification/suppression de la collection: ${error.message}`);
-    }
-
-    // Créer la collection
+    console.log('📅 Création de la collection Reservations...');
+    
     const collection = await databases.createCollection(
       DATABASE_ID,
       COLLECTIONS.RESERVATIONS,
@@ -417,14 +335,13 @@ async function createReservationsCollection() {
 
     // Créer les index
     await databases.createIndex(DATABASE_ID, COLLECTIONS.RESERVATIONS, 'client_index', 'key', ['clientId']);
-    await databases.createIndex(DATABASE_ID, COLLECTIONS.RESERVATIONS, 'client_fulltext_index', 'fulltext', ['clientId']);
     await databases.createIndex(DATABASE_ID, COLLECTIONS.RESERVATIONS, 'store_index', 'key', ['storeId']);
     await databases.createIndex(DATABASE_ID, COLLECTIONS.RESERVATIONS, 'status_index', 'key', ['status']);
     await databases.createIndex(DATABASE_ID, COLLECTIONS.RESERVATIONS, 'date_index', 'key', ['expectedPickupDate']);
 
-    console.log(`Collection '${COLLECTIONS.RESERVATIONS}' créée avec succès.`);
+    console.log('✅ Collection Reservations créée');
   } catch (error) {
-    console.error(`Erreur lors de la création de la collection '${COLLECTIONS.RESERVATIONS}':`, error);
+    console.error(`❌ Erreur lors de la création de la collection Reservations:`, error.message);
     throw error;
   }
 }
@@ -432,16 +349,8 @@ async function createReservationsCollection() {
 // Fonction pour créer la collection ReservationItems
 async function createReservationItemsCollection() {
   try {
-    // Vérifier si la collection existe déjà
-    try {
-      await databases.getCollection(DATABASE_ID, COLLECTIONS.RESERVATION_ITEMS);
-      console.log(`Collection '${COLLECTIONS.RESERVATION_ITEMS}' existe déjà.`);
-      return;
-    } catch (error) {
-      if (error.code !== 404) throw error;
-    }
-
-    // Créer la collection
+    console.log('📝 Création de la collection ReservationItems...');
+    
     const collection = await databases.createCollection(
       DATABASE_ID,
       COLLECTIONS.RESERVATION_ITEMS,
@@ -465,9 +374,55 @@ async function createReservationItemsCollection() {
     await databases.createIndex(DATABASE_ID, COLLECTIONS.RESERVATION_ITEMS, 'reservation_index', 'key', ['reservationId']);
     await databases.createIndex(DATABASE_ID, COLLECTIONS.RESERVATION_ITEMS, 'product_index', 'key', ['productId']);
 
-    console.log(`Collection '${COLLECTIONS.RESERVATION_ITEMS}' créée avec succès.`);
+    console.log('✅ Collection ReservationItems créée');
   } catch (error) {
-    console.error(`Erreur lors de la création de la collection '${COLLECTIONS.RESERVATION_ITEMS}':`, error);
+    console.error(`❌ Erreur lors de la création de la collection ReservationItems:`, error.message);
+    throw error;
+  }
+}
+
+// Fonction pour créer la collection Access Codes
+async function createAccessCodesCollection() {
+  try {
+    console.log('🔑 Création de la collection AccessCodes...');
+    
+    const collection = await databases.createCollection(
+      DATABASE_ID,
+      COLLECTIONS.ACCESS_CODES,
+      'Codes d\'accès',
+      [
+        Permission.read(Role.any()),
+        Permission.create(Role.users()),
+        Permission.update(Role.users()),
+        Permission.delete(Role.users())
+      ]
+    );
+
+    // Ajouter les attributs
+    await databases.createStringAttribute(DATABASE_ID, COLLECTIONS.ACCESS_CODES, 'code', 255, true);
+    await databases.createStringAttribute(DATABASE_ID, COLLECTIONS.ACCESS_CODES, 'description', 255, false);
+
+    // Créer les index
+    await databases.createIndex(DATABASE_ID, COLLECTIONS.ACCESS_CODES, 'code_index', 'unique', ['code']);
+
+    console.log('✅ Collection AccessCodes créée');
+    
+    // Ajouter le code d'accès initial
+    const accessCode = Buffer.from('sodiluxe').toString('hex');
+    
+    await databases.createDocument(
+      DATABASE_ID,
+      COLLECTIONS.ACCESS_CODES,
+      ID.unique(),
+      {
+        code: accessCode,
+        description: 'Code d\'accès pour la création de compte'
+      }
+    );
+    
+    console.log(`🔑 Code d'accès initial créé: ${accessCode}`);
+  } catch (error) {
+    console.error(`❌ Erreur lors de la création de la collection AccessCodes:`, error.message);
     throw error;
   }
 }
@@ -475,16 +430,8 @@ async function createReservationItemsCollection() {
 // Fonction pour créer la collection Loyalty History
 async function createLoyaltyHistoryCollection() {
   try {
-    // Vérifier si la collection existe déjà
-    try {
-      await databases.getCollection(DATABASE_ID, COLLECTIONS.LOYALTY_HISTORY);
-      console.log(`Collection '${COLLECTIONS.LOYALTY_HISTORY}' existe déjà.`);
-      return;
-    } catch (error) {
-      if (error.code !== 404) throw error;
-    }
-
-    // Créer la collection
+    console.log('🏆 Création de la collection LoyaltyHistory...');
+    
     await databases.createCollection(
       DATABASE_ID,
       COLLECTIONS.LOYALTY_HISTORY,
@@ -511,13 +458,12 @@ async function createLoyaltyHistoryCollection() {
     await databases.createIndex(DATABASE_ID, COLLECTIONS.LOYALTY_HISTORY, 'sale_index', 'key', ['saleId']);
     await databases.createIndex(DATABASE_ID, COLLECTIONS.LOYALTY_HISTORY, 'date_index', 'key', ['date']);
 
-    console.log(`Collection '${COLLECTIONS.LOYALTY_HISTORY}' créée avec succès.`);
+    console.log('✅ Collection LoyaltyHistory créée');
   } catch (error) {
-    console.error(`Erreur lors de la création de la collection '${COLLECTIONS.LOYALTY_HISTORY}':`, error);
+    console.error(`❌ Erreur lors de la création de la collection LoyaltyHistory:`, error.message);
     throw error;
   }
 }
 
 // Exécuter la fonction principale
-createCollections();
-
+recreateDatabase();

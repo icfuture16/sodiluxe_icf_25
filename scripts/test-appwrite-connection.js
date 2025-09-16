@@ -139,3 +139,4 @@ try {
 } catch (error) {
   console.error('Error initializing Appwrite client:', error);
 }
+

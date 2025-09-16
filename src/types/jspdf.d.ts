@@ -5,3 +5,4 @@ declare module 'jspdf' {
     autoTable: (options: any) => any;
   }
 }
+

@@ -44,3 +44,4 @@ export async function getStores(): Promise<Store[]> {
     return [];
   }
 }
+

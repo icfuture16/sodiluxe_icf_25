@@ -72,3 +72,4 @@ async function checkSession() {
 }
 
 checkSession();
+

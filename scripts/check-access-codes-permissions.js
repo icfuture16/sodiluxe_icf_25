@@ -93,3 +93,4 @@ checkAccessCodesPermissions()
     console.error('\n❌ Échec de la vérification:', error);
     process.exit(1);
   });
+

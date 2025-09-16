@@ -222,3 +222,4 @@ export const exportDashboardData = (
     console.error('Format d\'exportation non pris en charge:', format);
   }
 };
+

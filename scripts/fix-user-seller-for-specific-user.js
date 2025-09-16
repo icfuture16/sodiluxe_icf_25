@@ -107,3 +107,4 @@ if (!process.env.APPWRITE_API_KEY) {
 
 // Exécuter le script
 fixUserSellerForSpecificUser();
+

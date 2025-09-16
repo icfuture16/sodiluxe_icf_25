@@ -159,7 +159,7 @@ async function checkDatabase() {
   const endpoint = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT;
   const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID;
   const apiKey = process.env.APPWRITE_API_KEY;
-  const databaseId = process.env.APPWRITE_DATABASE_ID || '68599714002eef233c16'; // Utiliser la valeur par défaut si non définie
+  const databaseId = process.env.APPWRITE_DATABASE_ID || '68bf1e7b003c6b340d6e'; // Utiliser la valeur par défaut si non définie
   
   if (!apiKey) {
     console.log(colorize('ℹ', 'yellow') + ' Clé API non définie. Impossible de vérifier la base de données.');
@@ -238,7 +238,7 @@ function checkClientConfiguration() {
       const clientDatabaseId = databaseIdMatch[1];
       console.log(`ID de la base de données dans client.ts: ${clientDatabaseId}`);
       
-      const envDatabaseId = process.env.APPWRITE_DATABASE_ID || '68599714002eef233c16';
+      const envDatabaseId = process.env.APPWRITE_DATABASE_ID || '68bf1e7b003c6b340d6e';
       if (clientDatabaseId === envDatabaseId) {
         console.log(colorize('✓', 'green') + ' L\'ID de la base de données correspond à la variable d\'environnement');
       } else {
@@ -297,3 +297,4 @@ async function main() {
 main().catch(error => {
   console.error('Erreur lors de l\'exécution du script:', error);
 });
+

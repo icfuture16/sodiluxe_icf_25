@@ -63,3 +63,4 @@ function cleanCache() {
 
 // Exécuter la fonction principale
 cleanCache();
+

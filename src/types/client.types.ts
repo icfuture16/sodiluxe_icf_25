@@ -106,3 +106,4 @@ export interface LoyaltyHistoryInput {
   description: string;
   storeId?: string;
 }
+

@@ -9,7 +9,7 @@ const client = new Client()
 
 const databases = new Databases(client);
 
-const DATABASE_ID = '68599714002eef233c16';
+const DATABASE_ID = '68bf1e7b003c6b340d6e';
 const COLLECTION_ID = 'after_sales_service';
 
 // Fonction pour générer user_seller à partir du nom complet
@@ -116,3 +116,4 @@ if (require.main === module) {
 }
 
 module.exports = { migrateSavData, generateUserSeller };
+

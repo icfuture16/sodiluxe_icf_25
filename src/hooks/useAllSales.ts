@@ -125,3 +125,4 @@ export function useAllSales(filters?: {
     refetchOnWindowFocus: true, // Rafraîchissement au focus de la fenêtre
   })
 }
+

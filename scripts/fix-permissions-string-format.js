@@ -90,3 +90,4 @@ configureAccessCodesPermissions()
     console.error('❌ Échec de la configuration:', error);
     process.exit(1);
   });
+

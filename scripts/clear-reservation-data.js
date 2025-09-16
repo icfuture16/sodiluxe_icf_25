@@ -5,7 +5,7 @@ const APPWRITE_ENDPOINT = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT;
 const APPWRITE_PROJECT_ID = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID;
 const APPWRITE_API_KEY = process.env.APPWRITE_API_KEY;
 
-const DATABASE_ID = '68599714002eef233c16'; // Remplacez par l'ID de votre base de données
+const DATABASE_ID = '68bf1e7b003c6b340d6e'; // Remplacez par l'ID de votre base de données
 const RESERVATIONS_COLLECTION_ID = 'reservations'; // Remplacez par l'ID de votre collection de réservations
 const RESERVATION_ITEMS_COLLECTION_ID = 'reservation_items'; // Remplacez par l'ID de votre collection d'articles de réservation
 
@@ -70,3 +70,4 @@ async function clearAllReservationData() {
 }
 
 clearAllReservationData();
+

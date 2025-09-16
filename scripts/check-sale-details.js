@@ -57,3 +57,4 @@ if (!saleId) {
 }
 
 checkSaleDetails(saleId);
+

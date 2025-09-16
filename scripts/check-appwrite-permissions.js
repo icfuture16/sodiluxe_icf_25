@@ -31,7 +31,7 @@ const databases = new Databases(client);
 const account = new Account(client);
 
 // ID de la base de données et des collections
-const DATABASE_ID = '68599714002eef233c16'; // Utiliser l'ID de la base de données de client.ts
+const DATABASE_ID = '68bf1e7b003c6b340d6e'; // Utiliser l'ID de la base de données de client.ts
 const COLLECTIONS = {
   STORES: 'stores',
   USERS: 'users',
@@ -160,3 +160,4 @@ checkAppwritePermissions().catch(error => {
   console.error('Erreur:', error);
   process.exit(1);
 });
+

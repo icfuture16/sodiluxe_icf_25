@@ -2,3 +2,4 @@
 import { databases, account, teams, client, Query } from './appwrite/client'
 
 export { databases, account, teams, client, Query }
+

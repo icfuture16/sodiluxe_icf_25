@@ -57,3 +57,4 @@ async function findIdInCollections(searchId) {
 // Rechercher l'ID problématique
 const searchId = '688987f7003216df6426';
 findIdInCollections(searchId);
+

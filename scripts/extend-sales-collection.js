@@ -195,3 +195,4 @@ extendSalesCollection().catch(error => {
   console.error('Erreur inattendue:', error);
   process.exit(1);
 });
+

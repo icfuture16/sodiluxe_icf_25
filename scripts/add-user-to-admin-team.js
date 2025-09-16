@@ -108,3 +108,4 @@ if (!process.env.APPWRITE_API_KEY) {
 
 console.log('🚀 Ajout de l\'utilisateur à l\'équipe admin...');
 addUserToAdminTeam();
+

@@ -57,3 +57,4 @@ export function useAverageAfterSalesTime() {
     staleTime: 10 * 60 * 1000,
   });
 }
+

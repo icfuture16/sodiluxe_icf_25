@@ -56,3 +56,4 @@ try {
 
 console.log('\n=== Installation terminée ===');
 console.log('Pour démarrer l\'application, exécutez: npm run dev');
+

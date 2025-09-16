@@ -8,3 +8,4 @@ export const colors = {
     light: '#C6CCD3',   // Gris bleuté
   }
 }
+

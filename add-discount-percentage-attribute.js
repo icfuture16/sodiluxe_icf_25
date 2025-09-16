@@ -5,9 +5,9 @@ const { Client, Databases } = require('node-appwrite');
 require('dotenv').config();
 
 // Configuration Appwrite
-const DATABASE_ID = '68599714002eef233c16';
+const DATABASE_ID = '68bf1e7b003c6b340d6e';
 const COLLECTION_ID = 'reservation_items';
-const PROJECT_ID = '6856f8aa00281cb47665';
+const PROJECT_ID = '68bf1c29001d20f7444d';
 const ENDPOINT = 'https://fra.cloud.appwrite.io/v1';
 const API_KEY = process.env.APPWRITE_API_KEY;
 
@@ -60,3 +60,4 @@ addDiscountPercentageAttribute()
     console.error('Erreur lors de l\'exécution du script:', error);
     process.exit(1);
   });
+

@@ -235,3 +235,4 @@ async function createRealUserFromAuth() {
 
 // Exécuter le script
 createRealUserFromAuth();
+

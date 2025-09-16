@@ -4,7 +4,7 @@ const { Client, Databases, Query } = require('node-appwrite');
 const client = new Client();
 client
   .setEndpoint('https://fra.cloud.appwrite.io/v1')
-  .setProject('6856f8aa00281cb47665')
+  .setProject('68bf1c29001d20f7444d')
   .setKey(process.env.APPWRITE_API_KEY || '');
 
 const databases = new Databases(client);
@@ -12,12 +12,12 @@ const databases = new Databases(client);
 async function listDebitSales() {
   try {
     console.log('📥 Récupération des ventes débitrices...');
-    console.log('   - Database ID: 68599714002eef233c16');
+    console.log('   - Database ID: 68bf1e7b003c6b340d6e');
     console.log('   - Collection ID: debit_sales');
     console.log('');
 
     const response = await databases.listDocuments(
-      '68599714002eef233c16',
+      '68bf1e7b003c6b340d6e',
       'debit_sales',
       [Query.limit(25), Query.orderDesc('$createdAt')]
     );
@@ -46,3 +46,4 @@ async function listDebitSales() {
 }
 
 listDebitSales();
+

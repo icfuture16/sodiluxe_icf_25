@@ -24,3 +24,4 @@ const config: Config = {
   // S'assurer que le plugin forms est correctement chargé
 }
 export default config
+

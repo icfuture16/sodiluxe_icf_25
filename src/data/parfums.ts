@@ -42,3 +42,4 @@ export const uniqueMarques = Array.from(new Set(parfumsData.map(item => item.mar
 
 // Extraire les familles uniques
 export const uniqueFamilles = Array.from(new Set(parfumsData.map(item => item.famille)));
+

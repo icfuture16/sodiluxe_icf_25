@@ -5,8 +5,8 @@ const { DATABASE_ID, COLLECTIONS } = require('./appwrite-config');
 
 // Définir manuellement les variables d'environnement
 process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT = 'https://fra.cloud.appwrite.io/v1';
-process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID = '6856f8aa00281cb47665';
-process.env.APPWRITE_API_KEY = 'c0c9c3c0c0c9c3c0c0c9c3c0c0c9c3c0c0c9c3c0c0c9c3c0c0c9c3c0c0c9c3c0'; // Remplacer par votre clé API réelle
+process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID = '68bf1c29001d20f7444d';
+process.env.APPWRITE_API_KEY = 'standard_7c860836bcc01137b6f2bac843cb0996bdb7d67d58e613ee92b26122296b0b7b42da7bbee2748b0b15c86f672a56e59ef5ebc21946625940759df6dc5396d43d0fb84c7535b3789f0ff54bc125305d06936ea9cbefec68dd0714dac4889fbeb630687ad2873aea1050bec1140c600a89d14e6cdfdffc6203509b14de4d897ad3';
 
 // Initialiser le client Appwrite
 const client = new Client()
@@ -52,3 +52,4 @@ async function configurePermissions() {
 }
 
 configurePermissions();
+

@@ -6,7 +6,7 @@ const client = new Client()
   .setKey(process.env.APPWRITE_API_KEY)
 
 const databases = new Databases(client)
-const DATABASE_ID = '68599714002eef233c16'
+const DATABASE_ID = '68bf1e7b003c6b340d6e'
 
 async function migrateDebitSalesToSales() {
   try {
@@ -108,3 +108,4 @@ async function migrateDebitSalesToSales() {
 }
 
 migrateDebitSalesToSales()
+

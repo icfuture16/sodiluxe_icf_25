@@ -98,3 +98,4 @@ exportAllCollections().catch((err) => {
   console.error('Erreur export global:', err);
   process.exit(1);
 });
+

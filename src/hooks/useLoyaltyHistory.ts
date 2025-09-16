@@ -159,3 +159,4 @@ export function useCalculateLoyaltyPoints() {
 
 // Import nécessaire pour useUpdateCachedClient
 import { useUpdateCachedClient } from './useCachedClients'
+

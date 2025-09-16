@@ -40,3 +40,4 @@ console.log('1. Essayer de récupérer dans "debit_sales"');
 console.log('2. Si 404, essayer dans "sales"');
 console.log('3. Si trouvé dans "sales", rediriger vers la page de vente normale');
 console.log('');
+

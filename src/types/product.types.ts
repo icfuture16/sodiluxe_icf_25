@@ -17,3 +17,4 @@ export interface ProductInput {
 
   stockQuantity: number;
 }
+

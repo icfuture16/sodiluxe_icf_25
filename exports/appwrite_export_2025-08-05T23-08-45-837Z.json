@@ -28,7 +28,7 @@
         "update(\"user:688a0eff003d77554c33\")",
         "delete(\"user:688a0eff003d77554c33\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "after_sales_service"
     }
   ],
@@ -46,7 +46,7 @@
         "update(\"user:688a0eff003d77554c33\")",
         "delete(\"user:688a0eff003d77554c33\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "product_categories"
     },
     {
@@ -62,7 +62,7 @@
         "update(\"user:688a0eff003d77554c33\")",
         "delete(\"user:688a0eff003d77554c33\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "product_categories"
     },
     {
@@ -78,7 +78,7 @@
         "update(\"user:688a0eff003d77554c33\")",
         "delete(\"user:688a0eff003d77554c33\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "product_categories"
     },
     {
@@ -94,7 +94,7 @@
         "update(\"user:688987f7003216df6426\")",
         "delete(\"user:688987f7003216df6426\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "product_categories"
     }
   ],
@@ -115,7 +115,7 @@
         "update(\"user:6876c4480018d0d5698d\")",
         "delete(\"user:6876c4480018d0d5698d\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "objectives"
     },
     {
@@ -133,7 +133,7 @@
         "update(\"user:6876c4480018d0d5698d\")",
         "delete(\"user:6876c4480018d0d5698d\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "objectives"
     },
     {
@@ -151,7 +151,7 @@
         "update(\"user:6876c4480018d0d5698d\")",
         "delete(\"user:6876c4480018d0d5698d\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "objectives"
     },
     {
@@ -169,7 +169,7 @@
         "update(\"user:6876c4480018d0d5698d\")",
         "delete(\"user:6876c4480018d0d5698d\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "objectives"
     }
   ],
@@ -189,7 +189,7 @@
       "$createdAt": "2025-06-23T20:15:03.139+00:00",
       "$updatedAt": "2025-06-23T20:15:03.139+00:00",
       "$permissions": [],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "access_codes"
     },
     {
@@ -200,7 +200,7 @@
       "$createdAt": "2025-07-10T01:12:34.473+00:00",
       "$updatedAt": "2025-07-10T01:12:34.473+00:00",
       "$permissions": [],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "access_codes"
     }
   ],
@@ -220,7 +220,7 @@
         "update(\"user:688a0eff003d77554c33\")",
         "delete(\"user:688a0eff003d77554c33\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "sale_items"
     },
     {
@@ -238,7 +238,7 @@
         "update(\"user:688a0eff003d77554c33\")",
         "delete(\"user:688a0eff003d77554c33\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "sale_items"
     },
     {
@@ -256,7 +256,7 @@
         "update(\"user:688987f7003216df6426\")",
         "delete(\"user:688987f7003216df6426\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "sale_items"
     },
     {
@@ -274,7 +274,7 @@
         "update(\"user:688987f7003216df6426\")",
         "delete(\"user:688987f7003216df6426\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "sale_items"
     }
   ],
@@ -308,7 +308,7 @@
         "update(\"user:688a0eff003d77554c33\")",
         "delete(\"user:688a0eff003d77554c33\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "sales"
     },
     {
@@ -340,7 +340,7 @@
         "update(\"user:688a0eff003d77554c33\")",
         "delete(\"user:688a0eff003d77554c33\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "sales"
     },
     {
@@ -372,7 +372,7 @@
         "update(\"user:688987f7003216df6426\")",
         "delete(\"user:688987f7003216df6426\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "sales"
     },
     {
@@ -404,7 +404,7 @@
         "update(\"user:688987f7003216df6426\")",
         "delete(\"user:688987f7003216df6426\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "sales"
     }
   ],
@@ -428,7 +428,7 @@
         "update(\"user:688a0eff003d77554c33\")",
         "delete(\"user:688a0eff003d77554c33\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "products"
     },
     {
@@ -450,7 +450,7 @@
         "update(\"user:688a0eff003d77554c33\")",
         "delete(\"user:688a0eff003d77554c33\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "products"
     },
     {
@@ -472,7 +472,7 @@
         "update(\"user:688987f7003216df6426\")",
         "delete(\"user:688987f7003216df6426\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "products"
     },
     {
@@ -494,7 +494,7 @@
         "update(\"user:688987f7003216df6426\")",
         "delete(\"user:688987f7003216df6426\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "products"
     }
   ],
@@ -525,7 +525,7 @@
         "update(\"user:68621b83000c6a99bf42\")",
         "delete(\"user:68621b83000c6a99bf42\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "clients"
     },
     {
@@ -554,7 +554,7 @@
         "update(\"user:6876c4480018d0d5698d\")",
         "delete(\"user:6876c4480018d0d5698d\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "clients"
     }
   ],
@@ -569,7 +569,7 @@
       "$createdAt": "2025-07-09T16:11:05.811+00:00",
       "$updatedAt": "2025-07-09T16:11:05.811+00:00",
       "$permissions": [],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "users"
     },
     {
@@ -586,7 +586,7 @@
         "update(\"user:6876c4480018d0d5698d\")",
         "delete(\"user:6876c4480018d0d5698d\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "users"
     },
     {
@@ -603,7 +603,7 @@
         "update(\"user:6876c4480018d0d5698d\")",
         "delete(\"user:6876c4480018d0d5698d\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "users"
     },
     {
@@ -620,7 +620,7 @@
         "update(\"user:6876c4480018d0d5698d\")",
         "delete(\"user:6876c4480018d0d5698d\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "users"
     }
   ],
@@ -640,7 +640,7 @@
         "update(\"user:68621b83000c6a99bf42\")",
         "delete(\"user:68621b83000c6a99bf42\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "stores"
     },
     {
@@ -658,8 +658,9 @@
         "update(\"user:686e940e0015da833769\")",
         "delete(\"user:686e940e0015da833769\")"
       ],
-      "$databaseId": "68599714002eef233c16",
+      "$databaseId": "68bf1e7b003c6b340d6e",
       "$collectionId": "stores"
     }
   ]
 }
+

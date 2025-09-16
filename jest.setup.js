@@ -31,3 +31,4 @@ global.IntersectionObserver = IntersectionObserverMock
 afterEach(() => {
   jest.clearAllMocks()
 })
+

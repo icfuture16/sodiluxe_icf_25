@@ -123,3 +123,4 @@ export function useReservationsWithDetails(filters: ReservationFilters = {}) {
     enabled: !!reservations && !isLoadingReservations && !reservationsError,
   })
 }
+

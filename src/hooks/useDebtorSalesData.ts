@@ -138,3 +138,4 @@ export function useDebtorSalesData(filters: DebtorSalesFilters) {
     refetchOnWindowFocus: false
   })
 }
+

@@ -2,9 +2,9 @@ const fetch = require('node-fetch');
 
 exports.handler = async function(event, context) {
   // Infos depuis infos_utiles.txt
-  const PROJECT_ID = '6856f8aa00281cb47665';
+  const PROJECT_ID = '68bf1c29001d20f7444d';
   const API_ENDPOINT = 'https://fra.cloud.appwrite.io/v1';
-  const API_KEY = 'standard_4c24e91366984ffd2c2c09a0ed2d3527382fde636b7ea60c867a10467fb58ec942be378668988ad3cdc4993bf2f6839e75a7467b0771f3c8e899d0f1b3b063946c7ef195972d58310ccbbf899423fdd94ceda4b1e3a88c8c691d716e105890966f552b942cdf76360ae311305dae2559d92afe1ab64367f927af580263d63dc2';
+  const API_KEY = 'standard_bc56551b8743243f64bfc458f7e3fe88a1490354673bab3a831c43bb52ad30d0bc68ec5a98bacbc3606276ff185fabdb977e7dbc1e71c915256cc5c8e2fe6413c12a8301e263ccf0a013357b429d9eac807bc1fa5a8683046782e996c12ea97f3a044f0147f3f664bdf3fdb3d6aca169238c07a2fd23028ee04e6d18a5de39eb';
 
   try {
     const response = await fetch(`${API_ENDPOINT}/users?limit=100`, {
@@ -51,3 +51,4 @@ exports.handler = async function(event, context) {
     };
   }
 };
+

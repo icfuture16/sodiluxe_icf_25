@@ -142,3 +142,4 @@ function formatCurrency(amount) {
 }
 
 testFinalStats();
+

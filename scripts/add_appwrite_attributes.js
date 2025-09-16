@@ -3,12 +3,12 @@ const sdk = require('node-appwrite');
 // Configuration Appwrite
 const client = new sdk.Client()
     .setEndpoint('https://fra.cloud.appwrite.io/v1')
-    .setProject('6856f8aa00281cb47665')
-    .setKey('standard_4c24e91366984ffd2c2c09a0ed2d3527382fde636b7ea60c867a10467fb58ec942be378668988ad3cdc4993bf2f6839e75a7467b0771f3c8e899d0f1b3b063946c7ef195972d58310ccbbf899423fdd94ceda4b1e3a88c8c691d716e105890966f552b942cdf76360ae311305dae2559d92afe1ab64367f927af580263d63dc2');
+    .setProject('68bf1c29001d20f7444d')
+    .setKey('standard_7c860836bcc01137b6f2bac843cb0996bdb7d67d58e613ee92b26122296b0b7b42da7bbee2748b0b15c86f672a56e59ef5ebc21946625940759df6dc5396d43d0fb84c7535b3789f0ff54bc125305d06936ea9cbefec68dd0714dac4889fbeb630687ad2873aea1050bec1140c600a89d14e6cdfdffc6203509b14de4d897ad3');
 
 const databases = new sdk.Databases(client);
 
-const DATABASE_ID = '68599714002eef233c16';
+const DATABASE_ID = '68bf1e7b003c6b340d6e';
 const COLLECTION_ID = 'products'; // ID de la collection produits
 
 // Fonction pour ajouter un attribut texte
@@ -162,3 +162,4 @@ async function createIndex(name, attributes, type = 'key') {
         console.log('⚠️ Certains attributs n\'ont pas pu être ajoutés, vérifiez les erreurs ci-dessus');
     }
 })();
+

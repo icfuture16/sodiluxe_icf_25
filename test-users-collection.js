@@ -6,7 +6,7 @@ const client = new Client()
   .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID);
 
 const databases = new Databases(client);
-const DATABASE_ID = '68599714002eef233c16';
+const DATABASE_ID = '68bf1e7b003c6b340d6e';
 
 async function testCollections() {
   console.log('🔍 Test des collections disponibles...');
@@ -40,3 +40,4 @@ async function testCollections() {
 }
 
 testCollections();
+

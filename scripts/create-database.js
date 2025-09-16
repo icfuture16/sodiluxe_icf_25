@@ -72,3 +72,4 @@ async function createDatabase() {
 
 // Exécuter la fonction principale
 createDatabase();
+

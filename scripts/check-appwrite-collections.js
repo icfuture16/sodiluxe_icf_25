@@ -32,7 +32,7 @@ client
 const databases = new Databases(client);
 
 // ID de la base de données
-const DATABASE_ID = process.env.APPWRITE_DATABASE_ID || '68599714002eef233c16';
+const DATABASE_ID = process.env.APPWRITE_DATABASE_ID || '68bf1e7b003c6b340d6e';
 
 // Fonction principale
 async function checkCollections() {
@@ -83,3 +83,4 @@ async function checkCollections() {
 
 // Exécuter la fonction principale
 checkCollections();
+

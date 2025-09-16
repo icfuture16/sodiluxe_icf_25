@@ -94,3 +94,4 @@ if (!process.env.APPWRITE_API_KEY) {
 
 console.log('🚀 Démarrage du test de diagnostic...');
 testAdminStatusLogic();
+

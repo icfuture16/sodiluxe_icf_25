@@ -32,3 +32,4 @@ declare namespace NodeJS {
     // Ajoutez d'autres variables d'environnement ici
   }
 }
+

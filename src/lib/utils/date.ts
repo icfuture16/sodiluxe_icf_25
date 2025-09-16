@@ -19,3 +19,4 @@ export function formatDateCompact(date: string | Date): string {
   const minutes = d.getMinutes().toString().padStart(2, '0')
   return `${day} ${month} ${year} à ${hours}:${minutes}`
 }
+

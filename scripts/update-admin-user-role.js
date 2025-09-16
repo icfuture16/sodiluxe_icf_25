@@ -120,3 +120,4 @@ console.log('🗄️ Database ID:', config.DATABASE_ID);
 console.log('📁 Collection Users:', config.COLLECTIONS.USERS);
 
 updateAdminUserRole();
+

@@ -42,3 +42,4 @@ export async function getUserById(userId: string) {
     throw error
   }
 }
+

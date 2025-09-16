@@ -211,3 +211,4 @@ async function updateClientsCollection() {
 
 // Exécuter la fonction principale
 updateClientsCollection();
+

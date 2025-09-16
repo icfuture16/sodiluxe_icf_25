@@ -4,13 +4,13 @@ const { Client, Databases, Query } = require('node-appwrite');
 const client = new Client();
 client
   .setEndpoint('https://fra.cloud.appwrite.io/v1')
-  .setProject('6856f8aa00281cb47665')
+  .setProject('68bf1c29001d20f7444d')
   .setKey(process.env.APPWRITE_API_KEY || '');
 
 const databases = new Databases(client);
 
 const SALE_ID = '689983561f04e79181d1';
-const DATABASE_ID = '68599714002eef233c16';
+const DATABASE_ID = '68bf1e7b003c6b340d6e';
 
 async function convertSaleToDebitSale() {
   try {
@@ -108,3 +108,4 @@ async function convertSaleToDebitSale() {
 }
 
 convertSaleToDebitSale();
+

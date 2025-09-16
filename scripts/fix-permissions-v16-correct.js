@@ -90,3 +90,4 @@ configureAccessCodesPermissions()
     console.error('Erreur non gérée:', error);
     process.exit(1);
   });
+

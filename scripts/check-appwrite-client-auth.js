@@ -74,3 +74,4 @@ async function checkClientAuth() {
 
 // Exécuter la fonction principale
 checkClientAuth();
+

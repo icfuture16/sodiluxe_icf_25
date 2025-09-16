@@ -2,8 +2,8 @@
 require('dotenv').config();
 
 module.exports = {
-  DATABASE_ID: process.env.APPWRITE_DATABASE_ID || '68599714002eef233c16',
-  PROJECT_ID: process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || '6856f8aa00281cb47665',
+  DATABASE_ID: process.env.APPWRITE_DATABASE_ID || '68bf1e7b003c6b340d6e',
+  PROJECT_ID: process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || '68bf1c29001d20f7444d',
   ENDPOINT: process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || 'https://fra.cloud.appwrite.io/v1',
   COLLECTIONS: {
     STORES: 'stores',
@@ -23,3 +23,4 @@ module.exports = {
     LOYALTY_HISTORY: 'loyalty_history'
   }
 };
+

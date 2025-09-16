@@ -205,3 +205,4 @@ export function canAddPayment(sale: Sale): boolean {
   const stats = getPaymentStats(sale)
   return sale.isCredit && !stats.isFullyPaid && stats.remainingAmount > 0
 }
+

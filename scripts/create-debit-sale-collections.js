@@ -10,7 +10,7 @@ const client = new Client()
 const databases = new Databases(client);
 
 // ID de la base de données (à partir de client.ts)
-const DATABASE_ID = '68599714002eef233c16';
+const DATABASE_ID = '68bf1e7b003c6b340d6e';
 
 // Fonction pour créer les collections nécessaires aux ventes débitrices
 async function createDebitSaleCollections() {
@@ -145,3 +145,4 @@ async function createDebitSaleCollections() {
 
 // Exécuter la fonction
 createDebitSaleCollections();
+

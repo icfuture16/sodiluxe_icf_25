@@ -63,3 +63,4 @@ export interface ReservationFilters {
   dateRange?: { start: string; end: string };
   clientSearch?: string;
 }
+

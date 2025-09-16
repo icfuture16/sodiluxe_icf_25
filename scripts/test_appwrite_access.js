@@ -10,7 +10,7 @@ if (process.env.APPWRITE_API_KEY && typeof client.setKey === 'function') {
 }
 
 const databases = new Databases(client);
-const dbId = process.env.APPWRITE_DATABASE_ID || '68599714002eef233c16';
+const dbId = process.env.APPWRITE_DATABASE_ID || '68bf1e7b003c6b340d6e';
 
 async function test() {
   try {
@@ -24,3 +24,4 @@ async function test() {
 }
 
 test();
+

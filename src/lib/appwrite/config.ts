@@ -1,5 +1,5 @@
 // Configuration Appwrite - Constantes partagées
-export const DATABASE_ID = '68599714002eef233c16'; // ID de la base de données 'crm_sodiluxe'
+export const DATABASE_ID = '68bf1e7b003c6b340d6e'; // ID de la base de données 'crm_sodiluxe'
 
 export const COLLECTIONS = {
   USERS: 'users',
@@ -31,3 +31,4 @@ export const COLLECTIONS = {
 
 // Mot de passe développeur pour les opérations sensibles
 export const DEVELOPER_PASSWORD = 'dev2024!'
+

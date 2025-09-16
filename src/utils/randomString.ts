@@ -13,3 +13,4 @@ export function generateRandomString(length: number = 5): string {
   
   return result
 }
+
